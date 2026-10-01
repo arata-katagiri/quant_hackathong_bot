@@ -70,7 +70,22 @@ class RoostooClient:
         return self._request("GET", "/v3/ticker", {"pair": pair, "timestamp": self.timestamp()}, signed=False)
 
     def balance(self) -> dict[str, Any]:
-        return self._request("GET", "/v3/balance", {"timestamp": self.timestamp()}, signed=True)
+        payload = self._request("GET", "/v3/balance", {"timestamp": self.timestamp()}, signed=True)
+        # Older documentation shows Wallet at the top level; some deployments
+        # wrap it in Data. Normalize the supported shapes for the engine.
+        wallet: Any = payload.get("Wallet") or payload.get("wallet")
+        if not isinstance(wallet, dict):
+            for key in ("Data", "data", "Result", "result"):
+                container = payload.get(key)
+                if isinstance(container, dict):
+                    wallet = container.get("Wallet") or container.get("wallet")
+                    if isinstance(wallet, dict):
+                        break
+        if not isinstance(wallet, dict):
+            keys = ", ".join(sorted(str(key) for key in payload.keys()))
+            raise RoostooAPIError(f"balance response has no Wallet field (top-level keys: {keys or 'none'})")
+        payload["Wallet"] = wallet
+        return payload
 
     def place_market_order(self, pair: str, side: str, quantity: float) -> dict[str, Any]:
         if side not in {"BUY", "SELL"}:

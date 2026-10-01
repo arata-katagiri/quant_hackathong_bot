@@ -6,7 +6,7 @@ import time
 from .client import RoostooAPIError, RoostooClient
 from .config import Settings, load_dotenv
 from .engine import BotEngine
-from .logging_utils import setup_logger
+from .logging_utils import event, setup_logger
 
 
 def main() -> int:
@@ -22,8 +22,10 @@ def main() -> int:
         try:
             engine.run_once()
         except RoostooAPIError as exc:
+            event(settings.data_dir, "api_failure", error=str(exc))
             logger.exception("API failure: %s", exc)
-        except Exception:
+        except Exception as exc:
+            event(settings.data_dir, "unexpected_failure", error_type=type(exc).__name__, error=str(exc))
             logger.exception("unexpected failure")
         if args.once:
             return 0
@@ -32,4 +34,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

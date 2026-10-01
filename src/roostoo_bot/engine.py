@@ -50,6 +50,9 @@ class BotEngine:
 
     def run_once(self) -> None:
         state = self.store.load()
+        # This is intentionally first: a failed API call must still leave an
+        # audit trail for diagnosis and competition-review evidence.
+        event(self.settings.data_dir, "cycle_started", pairs=list(self.settings.pairs), dry_run=self.settings.dry_run)
         prices = self._mid_prices()
         history = state.setdefault("prices", {})
         for pair, price in prices.items():
@@ -90,4 +93,3 @@ class BotEngine:
                 response = self.client.place_market_order(pair, side, quantity)
                 event(self.settings.data_dir, "order_submitted", **order, response=response)
         self.store.save(state)
-
