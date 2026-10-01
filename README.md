@@ -41,6 +41,43 @@ Only after checking logs and testing, change `DRY_RUN=false` in the instance-loc
 4. Run one cycle, inspect `data/events.jsonl` and `data/bot.log`, then leave it running only after tests succeed.
 5. Use a service manager or supervised terminal session; record every configuration/code change in Git.
 
+### Exact credential setup on EC2
+
+Do this only inside the EC2 instance, never in GitHub and never in a chat window:
+
+```bash
+cd ~/quant_hackathong_bot
+cp .env.example .env
+nano .env
+chmod 600 .env
+```
+
+Put the credentials already issued by Roostoo into the matching values in `.env`; retain these settings while testing:
+
+```ini
+CREDENTIAL_SET=testing
+DRY_RUN=true
+```
+
+The bot recognizes these supplied names directly:
+
+```ini
+ROOSTOO_API_KEY=...                 # testing key
+ROOSTOO_API_SECRET=...              # testing secret
+ROOSTOO_COMPET_API_KEY=...          # competition key
+ROOSTOO_COMPET_API_SECRET=...       # competition secret
+```
+
+Run a single safe test cycle, then inspect its non-secret logs:
+
+```bash
+PYTHONPATH=src python3 -m unittest discover -s tests
+PYTHONPATH=src python3 -m roostoo_bot.main --once
+tail -n 5 data/events.jsonl
+```
+
+Do **not** change `CREDENTIAL_SET=competition` or `DRY_RUN=false` until the organizers open the live round on October 4 and this test has succeeded. `.env` is ignored by Git; never add it with `git add -f`.
+
 ## Repository hygiene for judging
 
 - Never commit API keys, logs containing secrets, or `.env`.
