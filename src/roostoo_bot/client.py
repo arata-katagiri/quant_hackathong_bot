@@ -71,19 +71,25 @@ class RoostooClient:
 
     def balance(self) -> dict[str, Any]:
         payload = self._request("GET", "/v3/balance", {"timestamp": self.timestamp()}, signed=True)
-        # Older documentation shows Wallet at the top level; some deployments
-        # wrap it in Data. Normalize the supported shapes for the engine.
-        wallet: Any = payload.get("Wallet") or payload.get("wallet")
+        # Older documentation shows Wallet at the top level. The hackathon
+        # backend currently returns SpotWallet (and a separate MarginWallet).
+        # This bot trades spot only, so SpotWallet is deliberately selected.
+        wallet: Any = payload.get("SpotWallet") or payload.get("spotWallet") or payload.get("Wallet") or payload.get("wallet")
         if not isinstance(wallet, dict):
             for key in ("Data", "data", "Result", "result"):
                 container = payload.get(key)
                 if isinstance(container, dict):
-                    wallet = container.get("Wallet") or container.get("wallet")
+                    wallet = (
+                        container.get("SpotWallet")
+                        or container.get("spotWallet")
+                        or container.get("Wallet")
+                        or container.get("wallet")
+                    )
                     if isinstance(wallet, dict):
                         break
         if not isinstance(wallet, dict):
             keys = ", ".join(sorted(str(key) for key in payload.keys()))
-            raise RoostooAPIError(f"balance response has no Wallet field (top-level keys: {keys or 'none'})")
+            raise RoostooAPIError(f"balance response has no spot wallet field (top-level keys: {keys or 'none'})")
         payload["Wallet"] = wallet
         return payload
 

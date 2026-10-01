@@ -17,8 +17,17 @@ class ClientTests(unittest.TestCase):
         client._request = lambda *_args, **_kwargs: {"Success": True, "Data": {"Wallet": {"USD": {"Free": 100}}}}
         self.assertEqual(client.balance()["Wallet"]["USD"]["Free"], 100)
 
+    def test_balance_prefers_spot_wallet(self) -> None:
+        client = RoostooClient("key", "secret")
+        client._request = lambda *_args, **_kwargs: {
+            "Success": True,
+            "SpotWallet": {"USD": {"Free": 100}},
+            "MarginWallet": {"USD": {"Free": 999}},
+        }
+        self.assertEqual(client.balance()["Wallet"]["USD"]["Free"], 100)
+
     def test_balance_rejects_unknown_shape(self) -> None:
         client = RoostooClient("key", "secret")
         client._request = lambda *_args, **_kwargs: {"Success": True, "Message": "unexpected"}
-        with self.assertRaisesRegex(Exception, "no Wallet field"):
+        with self.assertRaisesRegex(Exception, "no spot wallet field"):
             client.balance()
