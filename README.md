@@ -102,3 +102,25 @@ PYTHONPATH=src python3 -m roostoo_bot.backtest \
 ```
 
 The command writes `summary.json` (return, buy-and-hold comparison, drawdown, Sharpe, Sortino, Calmar, trade count, and active trading days) and `equity_curve.csv`. It mirrors the live bot's five-minute sampling, warm-up, and rebalance rule. This is a **single-asset** simulator, so its results are not the combined BTC/ETH portfolio. Binance USDT candles are a proxy for Roostoo's USD quotes. A single historical month is not enough to prove a strategy works.
+
+## Optional news research (separate from trading)
+
+The news observer fetches headlines from the public CoinDesk, Decrypt, and Cointelegraph RSS feeds. It stores each headline's **first-seen time** in `data/news.jsonl`, independently of the publisher's publication time. It neither reads Roostoo credentials nor imports the order client, and its output does **not** change the bot's trading decisions.
+
+Run one read-only collection cycle:
+
+```bash
+PYTHONPATH=src python3 -m roostoo_bot.news --once
+tail -n 5 data/news.jsonl
+```
+
+To add optional headline labels, set `OPENAI_BASE_URL=https://openrouter.ai/api/v1`, `OPENAI_API_KEY`, and `OPENAI_MODEL` in the instance-local `.env`, then run:
+
+```bash
+PYTHONPATH=src python3 -m roostoo_bot.news --once --llm
+tail -n 5 data/news_assessments.jsonl
+```
+
+Only public headlines are sent to OpenRouter. The observer caps classification at three relevant headlines per cycle; `--llm` may incur API charges. If a feed or model is unavailable, headlines already fetched remain saved and unclassified headlines can be retried later. The analysis labels the **tone of the headline**, not the likely price movement. No news label should affect orders without a timestamp-correct backtest and a separate decision to change the strategy.
+
+For ongoing collection, run `PYTHONPATH=src python3 -m roostoo_bot.news` as a **separate** process (default interval: one hour). Add `--llm` only if you want ongoing model usage. These commands require no Roostoo API keys. Keep `.env`, `data/news.jsonl`, and `data/news_assessments.jsonl` out of Git.
