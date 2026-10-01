@@ -88,3 +88,16 @@ Do **not** change `CREDENTIAL_SET=competition` or `DRY_RUN=false` until the orga
 ## Important limitations / next work
 
 This baseline needs a separate historical-data backtest before it is used live. It also needs an event-specific review of exchange precision/minimum-order rules and an organizer-approved interpretation of the required daily activity rule. Those are the next engineering tasks, rather than switching on live orders.
+
+## Historical backtest
+
+Download a Binance Vision kline CSV for the same asset, such as `BTCUSDT` or `ETHUSDT`. Roostoo's prices stream from Binance, so this is a useful research proxy; it is not a guarantee of live performance. Use one-hour candles first and run:
+
+```bash
+PYTHONPATH=src python3 -m roostoo_bot.backtest \
+  --csv data/BTCUSDT-1h.csv \
+  --periods-per-year 8760 \
+  --output data/backtest_btc
+```
+
+The command writes `summary.json` (return, drawdown, Sharpe, Sortino, Calmar and trade count) and `equity_curve.csv`. It includes the 0.1% market-order fee on every simulated trade and mirrors the live bot's warm-up and rebalance logic.
