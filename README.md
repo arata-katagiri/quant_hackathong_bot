@@ -2,6 +2,8 @@
 
 An intentionally conservative, long-only trend-following bot for the Roostoo Quant Trading Hackathon. It is designed to be understandable, auditable, and safe to evolve—not to promise profitable trading.
 
+**Research status (October 1):** The default 12/48 five-minute strategy performed poorly in a June–August 2026 historical test after estimated costs. Keep `DRY_RUN=true`; do not enable live trading with this configuration. See [RESEARCH.md](RESEARCH.md).
+
 ## Strategy
 
 For each configured pair, the bot samples the Roostoo ticker every five minutes and builds a local price history. It holds cash until the fast moving average is above the slow moving average and volatility is below a safety threshold. It then targets a capped exposure per asset; otherwise it targets zero exposure. A rebalance band limits unnecessary trading.
@@ -87,17 +89,16 @@ Do **not** change `CREDENTIAL_SET=competition` or `DRY_RUN=false` until the orga
 
 ## Important limitations / next work
 
-This baseline needs a separate historical-data backtest before it is used live. It also needs an event-specific review of exchange precision/minimum-order rules and an organizer-approved interpretation of the required daily activity rule. Those are the next engineering tasks, rather than switching on live orders.
+The initial historical test rejected the default strategy; see [RESEARCH.md](RESEARCH.md). Before any live orders, the bot also needs exchange-specific precision/minimum-order validation, a two-asset portfolio backtest, realistic execution checks, and a review of the required daily activity rule.
 
 ## Historical backtest
 
-Download a Binance Vision kline CSV for the same asset, such as `BTCUSDT` or `ETHUSDT`. Roostoo's prices stream from Binance, so this is a useful research proxy; it is not a guarantee of live performance. Use one-hour candles first and run:
+Download Binance Vision **five-minute spot klines** for the same asset, such as `BTCUSDT` or `ETHUSDT`. The simulator uses each candle's closing price to decide and the **next candle's open** to execute. It adds the 0.1% taker fee and a default 0.05% slippage allowance. Run each coin separately:
 
 ```bash
 PYTHONPATH=src python3 -m roostoo_bot.backtest \
-  --csv data/BTCUSDT-1h.csv \
-  --periods-per-year 8760 \
+  --csv data/market/BTCUSDT-5m-2026-08.zip \
   --output data/backtest_btc
 ```
 
-The command writes `summary.json` (return, drawdown, Sharpe, Sortino, Calmar and trade count) and `equity_curve.csv`. It includes the 0.1% market-order fee on every simulated trade and mirrors the live bot's warm-up and rebalance logic.
+The command writes `summary.json` (return, buy-and-hold comparison, drawdown, Sharpe, Sortino, Calmar, trade count, and active trading days) and `equity_curve.csv`. It mirrors the live bot's five-minute sampling, warm-up, and rebalance rule. This is a **single-asset** simulator, so its results are not the combined BTC/ETH portfolio. Binance USDT candles are a proxy for Roostoo's USD quotes. A single historical month is not enough to prove a strategy works.

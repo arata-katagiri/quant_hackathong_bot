@@ -4,11 +4,19 @@ import argparse
 import csv
 import json
 import math
+import zipfile
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from statistics import fmean, pstdev
 
 from .strategy import target_weight
+
+
+@dataclass(frozen=True)
+class Candle:
+    open_time_us: int
+    open: float
+    close: float
 
 
 @dataclass(frozen=True)
@@ -23,25 +31,47 @@ class BacktestResult:
     calmar_ratio: float | None
     trades: int
     observations: int
+    buy_and_hold_return: float | None = None
+    active_trading_days: int | None = None
 
 
-def load_closes(path: Path) -> list[float]:
-    """Read close prices from a named CSV or Binance's headerless kline export."""
-    with path.open(newline="") as stream:
-        first_line = stream.readline()
-        stream.seek(0)
-        has_header = "close" in first_line.lower()
-        if has_header:
-            rows = csv.DictReader(stream)
-            closes = [float(row.get("close") or row.get("Close") or "") for row in rows]
+def load_candles(paths: list[Path]) -> list[Candle]:
+    """Load continuous Binance five-minute spot candles from CSV or ZIP files."""
+    candles: list[Candle] = []
+    for path in paths:
+        if path.suffix.lower() == ".zip":
+            with zipfile.ZipFile(path) as archive:
+                names = [name for name in archive.namelist() if name.lower().endswith(".csv")]
+                if len(names) != 1:
+                    raise ValueError(f"{path}: expected exactly one CSV")
+                with archive.open(names[0]) as source:
+                    candles.extend(_parse_candle_rows(csv.reader(line.decode() for line in source)))
         else:
-            rows = csv.reader(stream)
-            closes = [float(row[4]) for row in rows if len(row) >= 5]
-    if len(closes) < 2:
-        raise ValueError("CSV must contain at least two close prices")
-    if any(price <= 0 for price in closes):
-        raise ValueError("close prices must be positive")
-    return closes
+            with path.open(newline="") as source:
+                candles.extend(_parse_candle_rows(csv.reader(source)))
+    candles.sort(key=lambda candle: candle.open_time_us)
+    if len(candles) < 50:
+        raise ValueError("at least 50 five-minute candles are required")
+    if any(current.open_time_us - previous.open_time_us != 300_000_000 for previous, current in zip(candles, candles[1:])):
+        raise ValueError("candles must be continuous five-minute intervals with no duplicates")
+    return candles
+
+
+def _parse_candle_rows(rows: csv.reader) -> list[Candle]:
+    parsed: list[Candle] = []
+    for row in rows:
+        if not row or row[0].lower() in {"open time", "open_time", "timestamp"}:
+            continue
+        if len(row) < 5:
+            raise ValueError("expected Binance kline columns: open time, open, high, low, close")
+        timestamp = int(row[0])
+        if timestamp < 10**15:  # pre-2025 Binance files use milliseconds
+            timestamp *= 1000
+        candle = Candle(timestamp, float(row[1]), float(row[4]))
+        if candle.open <= 0 or candle.close <= 0:
+            raise ValueError("candle prices must be positive")
+        parsed.append(candle)
+    return parsed
 
 
 def _metrics(equity_curve: list[float], initial_equity: float, periods_per_year: int) -> tuple[float, float, float | None, float | None, float | None]:
@@ -64,48 +94,58 @@ def _metrics(equity_curve: list[float], initial_equity: float, periods_per_year:
     return total_return, annualized_return, max_drawdown, sharpe, sortino, calmar
 
 
-def simulate(
-    closes: list[float],
+def simulate_candles(
+    candles: list[Candle],
     *,
     initial_cash: float = 50_000.0,
     fee_rate: float = 0.001,
+    slippage_rate: float = 0.0005,
     fast_window: int = 12,
     slow_window: int = 48,
     max_asset_weight: float = 0.35,
     rebalance_band: float = 0.05,
     min_trade_usd: float = 250.0,
-    periods_per_year: int = 8_760,
 ) -> tuple[BacktestResult, list[float]]:
-    """Simulate the live bot's long-only rebalancing using closing prices.
-
-    Fees are charged on every market-order notional. The implementation mirrors
-    the live strategy's warm-up, target allocation and rebalance threshold.
-    """
-    if initial_cash <= 0 or not 0 <= fee_rate < 1:
-        raise ValueError("initial_cash must be positive and fee_rate must be in [0, 1)")
+    """Calculate the signal after a close; fill any order at the next open."""
+    if initial_cash <= 0 or not 0 <= fee_rate < 1 or not 0 <= slippage_rate < 1:
+        raise ValueError("invalid cash, fee or slippage")
+    if len(candles) < slow_window + 2:
+        raise ValueError("not enough candles to warm up and execute")
     cash, quantity, trades = initial_cash, 0.0, 0
+    active_days: set[int] = set()
+    close_history: list[float] = []
+    target_for_next_open: float | None = None
     curve: list[float] = []
-    for index, price in enumerate(closes):
-        equity = cash + quantity * price
-        target = target_weight(closes[: index + 1], fast_window, slow_window, max_asset_weight)
-        current_value = quantity * price
-        delta_value = equity * target - current_value
-        threshold = max(min_trade_usd, equity * rebalance_band)
-        if abs(delta_value) >= threshold:
-            if delta_value > 0:
-                notional = min(delta_value, cash / (1 + fee_rate))
-                if notional > 0:
-                    cash -= notional * (1 + fee_rate)
-                    quantity += notional / price
-                    trades += 1
-            else:
-                notional = min(abs(delta_value), current_value)
-                if notional > 0:
-                    cash += notional * (1 - fee_rate)
-                    quantity -= notional / price
-                    trades += 1
-        curve.append(cash + quantity * price)
-    total_return, annualized_return, max_drawdown, sharpe, sortino, calmar = _metrics(curve, initial_cash, periods_per_year)
+    for candle in candles:
+        if target_for_next_open is not None:
+            equity_at_open = cash + quantity * candle.open
+            delta_value = equity_at_open * target_for_next_open - quantity * candle.open
+            threshold = max(min_trade_usd, equity_at_open * rebalance_band)
+            if abs(delta_value) >= threshold:
+                executed = False
+                if delta_value > 0:
+                    fill_price = candle.open * (1 + slippage_rate)
+                    notional = min(delta_value, cash / (1 + fee_rate))
+                    if notional > 0:
+                        cash -= notional * (1 + fee_rate)
+                        quantity += notional / fill_price
+                        trades += 1
+                        executed = True
+                else:
+                    fill_price = candle.open * (1 - slippage_rate)
+                    sold_quantity = min(quantity, abs(delta_value) / candle.open)
+                    if sold_quantity > 0:
+                        cash += sold_quantity * fill_price * (1 - fee_rate)
+                        quantity -= sold_quantity
+                        trades += 1
+                        executed = True
+                if executed:
+                    active_days.add(candle.open_time_us // 86_400_000_000)
+        curve.append(cash + quantity * candle.close)
+        close_history.append(candle.close)
+        target_for_next_open = target_weight(close_history, fast_window, slow_window, max_asset_weight)
+    total_return, annualized_return, max_drawdown, sharpe, sortino, calmar = _metrics(curve, initial_cash, 105_120)
+    buy_hold_quantity = initial_cash / (candles[0].open * (1 + slippage_rate) * (1 + fee_rate))
     return (
         BacktestResult(
             initial_equity=initial_cash,
@@ -117,7 +157,9 @@ def simulate(
             sortino_ratio=sortino,
             calmar_ratio=calmar,
             trades=trades,
-            observations=len(closes),
+            observations=len(candles),
+            buy_and_hold_return=buy_hold_quantity * candles[-1].close / initial_cash - 1,
+            active_trading_days=len(active_days),
         ),
         curve,
     )
@@ -133,13 +175,13 @@ def write_report(result: BacktestResult, equity_curve: list[float], output_dir: 
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Backtest the live bot's trend strategy against candle closes")
-    parser.add_argument("--csv", type=Path, required=True, help="Binance kline CSV or a CSV with a close column")
+    parser = argparse.ArgumentParser(description="Backtest the five-minute trend strategy")
+    parser.add_argument("--csv", type=Path, nargs="+", required=True, help="Binance 5m kline CSV or ZIP files in sequence")
     parser.add_argument("--output", type=Path, default=Path("data/backtest"))
-    parser.add_argument("--periods-per-year", type=int, default=8_760, help="8760 for hourly candles; 105120 for 5-minute candles")
     parser.add_argument("--initial-cash", type=float, default=50_000.0)
+    parser.add_argument("--slippage-rate", type=float, default=0.0005)
     args = parser.parse_args()
-    result, curve = simulate(load_closes(args.csv), initial_cash=args.initial_cash, periods_per_year=args.periods_per_year)
+    result, curve = simulate_candles(load_candles(args.csv), initial_cash=args.initial_cash, slippage_rate=args.slippage_rate)
     write_report(result, curve, args.output)
     print(json.dumps(asdict(result), indent=2))
     return 0
