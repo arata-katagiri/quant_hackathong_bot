@@ -39,9 +39,19 @@ class Settings:
         pairs = tuple(p.strip().upper() for p in os.getenv("PAIRS", "BTC/USD,ETH/USD").split(",") if p.strip())
         if not pairs:
             raise ValueError("PAIRS must contain at least one pair")
+        credential_set = os.getenv("CREDENTIAL_SET", "testing").strip().lower()
+        if credential_set == "competition":
+            api_key = os.getenv("ROOSTOO_COMPET_API_KEY", "")
+            secret_key = os.getenv("ROOSTOO_COMPET_API_SECRET", "")
+        elif credential_set == "testing":
+            api_key = os.getenv("ROOSTOO_API_KEY", "")
+            # ROOSTOO_SECRET_KEY is supported for compatibility with the API docs.
+            secret_key = os.getenv("ROOSTOO_API_SECRET", os.getenv("ROOSTOO_SECRET_KEY", ""))
+        else:
+            raise ValueError("CREDENTIAL_SET must be testing or competition")
         settings = cls(
-            api_key=os.getenv("ROOSTOO_API_KEY", ""),
-            secret_key=os.getenv("ROOSTOO_SECRET_KEY", ""),
+            api_key=api_key,
+            secret_key=secret_key,
             dry_run=_bool("DRY_RUN", True),
             pairs=pairs,
             poll_seconds=_int("POLL_SECONDS", 300),
@@ -71,4 +81,3 @@ def load_dotenv(path: Path = Path(".env")) -> None:
             continue
         key, value = line.split("=", 1)
         os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
-

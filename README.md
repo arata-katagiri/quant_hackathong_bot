@@ -21,14 +21,17 @@ The current baseline is deliberately **long-only**. It does not do market making
 
 ```bash
 cp .env.example .env
-# Put only your TEST API credentials in .env.
+# The user-provided .env convention is already supported:
+# ROOSTOO_API_KEY / ROOSTOO_API_SECRET for testing and
+# ROOSTOO_COMPET_API_KEY / ROOSTOO_COMPET_API_SECRET for the live competition.
+# Leave CREDENTIAL_SET=testing.
 PYTHONPATH=src python3 -m roostoo_bot.main --once
 PYTHONPATH=src python3 -m unittest discover -s tests
 ```
 
 `--once` is the first test: it performs signed read calls, creates no orders while `DRY_RUN=true`, and writes `data/events.jsonl`.
 
-Only after checking logs and testing, change `DRY_RUN=false` in the instance-local `.env`. Do not commit that file. Verify the organizers' confirmed competition start time before using the competition credential.
+Only after checking logs and testing, change `DRY_RUN=false` in the instance-local `.env`. Do not commit that file. Keep `CREDENTIAL_SET=testing` until the official Oct 4 start; then change it to `competition` on the instance only.
 
 ## EC2 deployment
 
