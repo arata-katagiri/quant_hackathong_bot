@@ -109,6 +109,8 @@ def simulate_candles(
     """Calculate the signal after a close; fill any order at the next open."""
     if initial_cash <= 0 or not 0 <= fee_rate < 1 or not 0 <= slippage_rate < 1:
         raise ValueError("invalid cash, fee or slippage")
+    if not 0 < fast_window < slow_window:
+        raise ValueError("fast_window must be positive and smaller than slow_window")
     if len(candles) < slow_window + 2:
         raise ValueError("not enough candles to warm up and execute")
     cash, quantity, trades = initial_cash, 0.0, 0
@@ -180,8 +182,14 @@ def main() -> int:
     parser.add_argument("--output", type=Path, default=Path("data/backtest"))
     parser.add_argument("--initial-cash", type=float, default=50_000.0)
     parser.add_argument("--slippage-rate", type=float, default=0.0005)
+    parser.add_argument("--fast-window", type=int, default=12)
+    parser.add_argument("--slow-window", type=int, default=48)
     args = parser.parse_args()
-    result, curve = simulate_candles(load_candles(args.csv), initial_cash=args.initial_cash, slippage_rate=args.slippage_rate)
+    result, curve = simulate_candles(
+        load_candles(args.csv), initial_cash=args.initial_cash,
+        slippage_rate=args.slippage_rate,
+        fast_window=args.fast_window, slow_window=args.slow_window,
+    )
     write_report(result, curve, args.output)
     print(json.dumps(asdict(result), indent=2))
     return 0
