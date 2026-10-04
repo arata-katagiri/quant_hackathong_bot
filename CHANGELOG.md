@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-04 — Python 3.9 HTTP-error compatibility hotfix
+
+- A body-less mocked HTTP 403 caused `HTTPError.close()` to raise on EC2's
+  Python 3.9, hiding the intended no-retry market-data error and failing tests.
+- Close HTTP error streams only when one exists in both public candle and signed
+  API clients; add a regression test for the signed client. No strategy,
+  credentials, EC2 configuration, or order behavior changed.
+- All 202 offline tests pass locally with network connections blocked; rerun
+  the suite on EC2 before enabling any orders.
+
 ## 2026-10-04 — competition release preparation
 
 - At the user's request after the October 4 start, selected the existing

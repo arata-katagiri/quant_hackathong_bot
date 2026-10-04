@@ -23,7 +23,9 @@ def _public_payload(url: str) -> bytes:
                 return response.read(1_000_001)
         except (OSError, URLError) as exc:
             code = exc.code if isinstance(exc, HTTPError) else None
-            if isinstance(exc, HTTPError):
+            # A mocked or body-less HTTPError may have no response stream.
+            # Python 3.9's close() raises in that case and must not mask 403.
+            if isinstance(exc, HTTPError) and exc.fp is not None:
                 exc.close()
             retryable = code is None or code in {408, 429} or code >= 500
             if attempt == 0 and retryable:

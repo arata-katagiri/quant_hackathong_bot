@@ -2,7 +2,7 @@
 
 A long-only spot research bot for the Roostoo Quant Trading Hackathon, with a shared BTC/ETH portfolio simulator and guarded execution engine.
 
-**October 4 release choice:** no strategy has demonstrated a reliable edge. For a contest entry, the existing BTC/ETH `buffered_trend` is selected as an **experimental** live configuration, not validated as profitable or guaranteed to qualify. Follow the guarded [competition deployment runbook](COMPETITION_DEPLOYMENT.md) before enabling orders. Its unseen September fortnight lost 4.08% after estimated costs. The suite has 201 passing offline tests. See [RESEARCH_V2.md](RESEARCH_V2.md) for results and [AUDIT.md](AUDIT.md) for verified rules and limitations. The older single-asset study is retained in [RESEARCH.md](RESEARCH.md).
+**October 4 release choice:** no strategy has demonstrated a reliable edge. For a contest entry, the existing BTC/ETH `buffered_trend` is selected as an **experimental** live configuration, not validated as profitable or guaranteed to qualify. Follow the guarded [competition deployment runbook](COMPETITION_DEPLOYMENT.md) before enabling orders. Its unseen September fortnight lost 4.08% after estimated costs. The suite has 202 passing offline tests after the EC2 Python 3.9 compatibility fix. See [RESEARCH_V2.md](RESEARCH_V2.md) for results and [AUDIT.md](AUDIT.md) for verified rules and limitations. The older single-asset study is retained in [RESEARCH.md](RESEARCH.md).
 
 Latest: a [public-attention long/cash test](ATTENTION_RESEARCH.md), using delayed
 Wikipedia readership rather than price-only signals, lost an average 0.94% base /

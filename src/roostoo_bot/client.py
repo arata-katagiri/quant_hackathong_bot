@@ -88,7 +88,7 @@ class RoostooClient:
                     raise ValueError("non-object response")
             except (HTTPError, URLError, OSError, ValueError) as exc:
                 code = exc.code if isinstance(exc, HTTPError) else None
-                if isinstance(exc, HTTPError):
+                if isinstance(exc, HTTPError) and exc.fp is not None:
                     exc.close()
                 message = f"{method} {path} failed ({'HTTP ' + str(code) if code else type(exc).__name__})"
                 if mutating:

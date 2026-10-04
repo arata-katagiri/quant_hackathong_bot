@@ -121,6 +121,14 @@ class ClientTests(unittest.TestCase):
             self.assertEqual(call.call_count, 2)
             self.assertIn(2.5, sleeps)
 
+    def test_bodyless_http_error_is_reported_without_retry(self):
+        client = RoostooClient("key", "secret")
+        error = HTTPError("https://example.invalid", 403, "forbidden", {}, None)
+        with patch("roostoo_bot.client.urlopen", side_effect=error) as opened:
+            with self.assertRaisesRegex(RoostooAPIError, "HTTP 403"):
+                client.server_time()
+        self.assertEqual(opened.call_count, 1)
+
     def test_no_pending_orders_documented_false_success_is_accepted(self):
         client = RoostooClient("key", "secret")
         response = io.BytesIO(json.dumps({"Success": False, "TotalPending": 0, "OrderPairs": {}}).encode())
