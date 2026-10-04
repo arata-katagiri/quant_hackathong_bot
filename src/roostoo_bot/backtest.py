@@ -5,6 +5,7 @@ import csv
 import json
 import math
 import zipfile
+import time
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from statistics import fmean, pstdev
@@ -17,6 +18,8 @@ class Candle:
     open_time_us: int
     open: float
     close: float
+    high: float | None = None
+    low: float | None = None
 
 
 @dataclass(frozen=True)
@@ -54,6 +57,8 @@ def load_candles(paths: list[Path]) -> list[Candle]:
         raise ValueError("at least 50 five-minute candles are required")
     if any(current.open_time_us - previous.open_time_us != 300_000_000 for previous, current in zip(candles, candles[1:])):
         raise ValueError("candles must be continuous five-minute intervals with no duplicates")
+    if candles[-1].open_time_us + 300_000_000 > int(time.time() * 1_000_000):
+        raise ValueError("dataset includes an incomplete or future candle")
     return candles
 
 
@@ -67,14 +72,20 @@ def _parse_candle_rows(rows: csv.reader) -> list[Candle]:
         timestamp = int(row[0])
         if timestamp < 10**15:  # pre-2025 Binance files use milliseconds
             timestamp *= 1000
-        candle = Candle(timestamp, float(row[1]), float(row[4]))
-        if candle.open <= 0 or candle.close <= 0:
-            raise ValueError("candle prices must be positive")
+        candle = Candle(timestamp, float(row[1]), float(row[4]), float(row[2]), float(row[3]))
+        if timestamp % 300_000_000:
+            raise ValueError("candle is not aligned to a five-minute boundary")
+        if any(not math.isfinite(value) or value <= 0 for value in (candle.open, candle.close, candle.high, candle.low)):
+            raise ValueError("candle prices must be positive and finite")
+        if candle.high < max(candle.open, candle.close) or candle.low > min(candle.open, candle.close):
+            raise ValueError("invalid OHLC price bounds")
+        if len(row) > 5 and (not math.isfinite(float(row[5])) or float(row[5]) < 0):
+            raise ValueError("invalid volume")
         parsed.append(candle)
     return parsed
 
 
-def _metrics(equity_curve: list[float], initial_equity: float, periods_per_year: int) -> tuple[float, float, float | None, float | None, float | None]:
+def _metrics(equity_curve: list[float], initial_equity: float, periods_per_year: int) -> tuple[float, float, float, float | None, float | None, float | None]:
     returns = [(current / previous) - 1 for previous, current in zip(equity_curve, equity_curve[1:]) if previous > 0]
     peak = initial_equity
     max_drawdown = 0.0

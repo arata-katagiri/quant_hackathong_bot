@@ -1,0 +1,18 @@
+{
+  "advance_to_sealed_holdout": false,
+  "gates": {
+    "both_months_positive_under_stress": false,
+    "all_windows_drawdown_at_most_8_percent": true,
+    "at_least_three_windows_with_8_active_dates": false
+  },
+  "windows_with_8_active_utc_dates": {
+    "base": 0,
+    "stress": 0
+  },
+  "strategy_approved_for_live": false,
+  "qualification_verified": false,
+  "unopened_holdout": [
+    "2026-03",
+    "2026-04"
+  ]
+}

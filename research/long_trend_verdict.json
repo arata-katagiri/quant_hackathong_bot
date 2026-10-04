@@ -1,0 +1,85 @@
+{
+  "scheduled_trials": 78,
+  "usable_trials": 77,
+  "excluded_trials": 1,
+  "costs": {
+    "base": {
+      "mean_return": 0.0022687288708030076,
+      "median_return": 0.0,
+      "control_mean_return": 0.0019338024000332297,
+      "mean_turnover": 0.7445046862904579,
+      "worst_drawdown": 0.08151694497359074,
+      "positive_windows": 34,
+      "active_utc_windows": 41,
+      "active_hkt_windows": 41,
+      "year_means": {
+        "2022": -0.001923948090720339,
+        "2023": 0.0032448296881937644,
+        "2024": 0.005820719171857464
+      },
+      "uncertainty": {
+        "repetitions": 2000,
+        "valid_replicates": 2000,
+        "block_trials": 2,
+        "seed": 20261002,
+        "return_interval": [
+          -0.00326253710228626,
+          0.008734070461463041
+        ],
+        "advantage_interval": [
+          -0.00599405573704539,
+          0.0068406468480528395
+        ]
+      },
+      "gates": {
+        "coverage": true,
+        "profit_and_advantage": false,
+        "two_positive_years": true,
+        "profitable_windows": false,
+        "active_windows": false,
+        "drawdown": false
+      }
+    },
+    "stress": {
+      "mean_return": 0.0015263262802881167,
+      "median_return": 0.0,
+      "control_mean_return": 0.0009633292466053023,
+      "mean_turnover": 0.7440207419609656,
+      "worst_drawdown": 0.08216152528705412,
+      "positive_windows": 33,
+      "active_utc_windows": 41,
+      "active_hkt_windows": 41,
+      "year_means": {
+        "2022": -0.0022042599180508355,
+        "2023": 0.0024229992600448024,
+        "2024": 0.004658686394737499
+      },
+      "uncertainty": {
+        "repetitions": 2000,
+        "valid_replicates": 2000,
+        "block_trials": 2,
+        "seed": 20261002,
+        "return_interval": [
+          -0.003931233341202273,
+          0.00790392239202448
+        ],
+        "advantage_interval": [
+          -0.005872882745280248,
+          0.007194967187527141
+        ]
+      },
+      "gates": {
+        "coverage": true,
+        "profit_and_advantage": false,
+        "two_positive_years": true,
+        "profitable_windows": false,
+        "active_windows": false,
+        "drawdown": false
+      }
+    }
+  },
+  "screen_passed": false,
+  "strategy_approved": false,
+  "reserved_validation_opened": false,
+  "qualification_verified": false
+}

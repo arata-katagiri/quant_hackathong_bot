@@ -1,0 +1,31 @@
+{
+  "bought_btc": 0.0001,
+  "buy": {
+    "average_price": 84250.06,
+    "commission": 0.008425,
+    "commission_coin": "USD",
+    "commission_rate": 0.001,
+    "filled_quantity": 0.0001,
+    "status": "FILLED"
+  },
+  "buy_notional": 8.425006,
+  "cash_change": -0.01999999999679858,
+  "credential_set": "testing",
+  "normal_bot_dry_run": true,
+  "pending_orders": 0,
+  "remaining_btc": 0,
+  "sell": {
+    "average_price": 84240,
+    "commission": 0.008424,
+    "commission_coin": "USD",
+    "commission_rate": 0.001,
+    "filled_quantity": 0.0001,
+    "status": "FILLED"
+  },
+  "sold_btc": 0.0001,
+  "strategy_approved_for_live": false,
+  "buy_order_id": "3405218",
+  "sell_order_id": "3405219",
+  "final_usd": 49999.98,
+  "finished_at": 1790831589.35324
+}

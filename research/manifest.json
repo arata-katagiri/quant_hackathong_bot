@@ -1,0 +1,429 @@
+{
+  "created_at": "2026-10-01T05:00:31.644997+00:00",
+  "inputs": [
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-05.zip",
+      "sha256": "06525e8a806eb976d9a9e1e71ccd324033e7cb95f69c8c9b8adf8265ac1e0194"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-06.zip",
+      "sha256": "963dd95de6dc9c49727d1c3fb8c4746a22709b2f2abc014f088cdf4571be3b3b"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-07.zip",
+      "sha256": "425f6e1a0de85dc99d8a7f17924bcb210c8f92100fb71e5993e1d197577b7053"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-08.zip",
+      "sha256": "85b174d0c091ab904341f1cce2f31fd88ebd0f10631678238756aa72d5d9897a"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-01.zip",
+      "sha256": "f36e1fb61463aef6ca44fbba5293c5bfb0ea1d9ed1bb060901d5b5d6b2a89d08"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-02.zip",
+      "sha256": "0335641b7744f563a425abeb4ab4181c19868b12450d29c6bcf4b5aae7a55d46"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-03.zip",
+      "sha256": "cd383e32b18d03884c7b5a56af669845fc0fcb7c72a0034a4741e57ff7ef2d4c"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-04.zip",
+      "sha256": "d31ad11d93394fcd39a3ef045a47bdcc30c4d661fc37e9e83f627dbdffe938ee"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-05.zip",
+      "sha256": "c05155706701290ed95ac87a50a75da45ad6c110504045a54967712f993eb3c8"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-06.zip",
+      "sha256": "4dd9400c225b8a416eb9975a42221429ceb777c1a429922182301a9ac3a857ad"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-07.zip",
+      "sha256": "4ff22f84912c9dcfdd177e2d5e4b8a6c673c3f6c002e7af2f352c1763d6be434"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-08.zip",
+      "sha256": "222ea168db185e41eeb6196fccedee6cde88896243cdb788ff41ca2ca9efbeb2"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-09.zip",
+      "sha256": "39a3ed27fd9feb36848600bc6d3ee4b7a1eae687580be8697e41ddf10f5e6342"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-10.zip",
+      "sha256": "0ad49a8062a7486e77d866f90e2e55594d71cea8c46ee663fb8cfaca6a8a32e2"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-11.zip",
+      "sha256": "b40d5cba726f208469bc5478cd1be9ab4799f1d6af6bc110e60f1b6e6de57fe8"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-12.zip",
+      "sha256": "1e593b146064cbcf05bef795db1c15537426622bd0a1812aa18476f346c6e30b"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-13.zip",
+      "sha256": "8f20c28ed0856f98a352acc057f35aa6c43ca7b36704007538a51e6b4ea4dffe"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-14.zip",
+      "sha256": "1fe316bd4e7578ad9009aacbab7eb076298b5f0261424c4b652ea1ea63e4646b"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-15.zip",
+      "sha256": "fb1c16e10b94f293821f6d0fc26ac986883e6ac64884be82b5bbfd65771395f1"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-16.zip",
+      "sha256": "4098122cff68cc5c64c5a3fa80938e62ce3bcf7e4f8803cf4f55805489bc3187"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-17.zip",
+      "sha256": "4031b41b241530e9afe004298f7af7876ffced29fe695e75b56c2737ee38dff5"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-18.zip",
+      "sha256": "743da4386c66045627b0f2e9cb80cf9b33ce2f026bf5406f255b55e04239b038"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-19.zip",
+      "sha256": "e90869b303cad1ca36290f877b377b63ebc036f3e4350d1701d99f69e826dfc1"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-20.zip",
+      "sha256": "280a0684c126754c3aec589bd232ab961b2b00ea6be8efac05c0315d081230e1"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-21.zip",
+      "sha256": "04e611ba2330723108cec626423521dba88cea5f1de911a91185c45b208f9cab"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-22.zip",
+      "sha256": "a06cee3cd7c0e4c4e72343079b6c1f24cfdffcaaea35005bd0d52bec2806edc9"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-23.zip",
+      "sha256": "ca5635d57dc24b0299da7201c070d48c912bcb4dbe9ce4578b81a49f262c5b6e"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-24.zip",
+      "sha256": "068a4104ddd5be21ffe17e2c844dca5cf6f3389fd76fe85efe89f09926b426a7"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-25.zip",
+      "sha256": "f8036b9d4732da57c56f42a94a681577dc170442d7afcc1d5fd324310543fe09"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-26.zip",
+      "sha256": "565e095d5c21e92f589475ad23e1ec64aba7c72f106b530cf6ba8e6758a652ba"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-27.zip",
+      "sha256": "92746f89500c8be08f22c40fd5e707788f32580c47fa2ab8e40c33096f527955"
+    },
+    {
+      "pair": "BTC/USD",
+      "file": "BTCUSDT-5m-2026-09-28.zip",
+      "sha256": "95bf4c04c4e2594a70f844aabeab0dc9c3098262162951d164999949216530e7"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-05.zip",
+      "sha256": "d736dcbba5693765ab28580eb29f534206c74a59e13d1dfdb8235827bc8ba924"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-06.zip",
+      "sha256": "a1ab99b4c178c3a86d4c6dbd234fb52e0ad6f7082440b3ef3223073de9f9b689"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-07.zip",
+      "sha256": "b451892abab0f301b31e7c9288bf2c03d7c25cff5e887258e7a721596ed5c0d8"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-08.zip",
+      "sha256": "4c19bc7ba07f0f57c2bfcf3ee465d874e630095cf3afadb9d31275d572d20a0a"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-01.zip",
+      "sha256": "b1f617f9ba7fdb4dffb66517a29b2d931e8fe56c26e2ddd6c7688521f7f07bdf"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-02.zip",
+      "sha256": "782f8003ff359d757d586d1fdc8538e9c4b376f982e3c3ea95bad892de239c3d"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-03.zip",
+      "sha256": "707da53d905c4d276132c3d9a0340d2206177e7cc78ded0eb78d8a36df6251c7"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-04.zip",
+      "sha256": "5cdc77b5abc0be98f1d37fcdd67b94868f7bd6d9fcf2c9a2fb2d7222d58a9fe8"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-05.zip",
+      "sha256": "0039214843df49dc108f2ec2860940f8cb62892d323515bccf2f36e3e50cf874"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-06.zip",
+      "sha256": "2d586e1dee1acb98d5483986db4ac5e064392f79caeda3f363925e6704b2a03b"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-07.zip",
+      "sha256": "3760b4b8ca45494592980a9341ef5fe67f375e13b5a9407c87619a78e9370365"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-08.zip",
+      "sha256": "ff1450bf4b59ea8b835a4a76a2abda7e3ca4e0fa645c1efdc27838eef57a43ad"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-09.zip",
+      "sha256": "3a4c2fedf1cc593ad55e57b928aaa8cf9bf268687219b4323a74bd1204059396"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-10.zip",
+      "sha256": "be870e990179a9aa37485405fb45d40ff2e85888abf80bf74f375cafc7649995"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-11.zip",
+      "sha256": "72db012401db02297c497d7a2b239d2765741f7e5d0d3595d0c6e6bfe2eb138c"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-12.zip",
+      "sha256": "34b61741289f8628cbbebd293545507199f86038e32e348458b4a94eade7f529"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-13.zip",
+      "sha256": "ff78e787ad5e6ec958e9da79536543bcb31b2e65700fcedb8792e04b1e507ae4"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-14.zip",
+      "sha256": "317e32cfcae1ee88ba3120897ea0047cf07e3fb49c495645304d3e24a29007cc"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-15.zip",
+      "sha256": "552134b360358e8a6796dd259d3d40cb28d2d82429163baea5fd21af1cdf89e7"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-16.zip",
+      "sha256": "2ab5ece71e7f7d3440bd6d42c8758c7029aeae488a795a69e98ec8cd06ef8f3c"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-17.zip",
+      "sha256": "f49faee768a8c481230bdacf98cd7aa731f0424aac7a8f76e1e0bca1b96a8779"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-18.zip",
+      "sha256": "89a23d07e44e4e8ce25450ca673ab4de95dad4acb8ef442424b1b7cc660f3a77"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-19.zip",
+      "sha256": "fd79e03761eda1963f1b2c4279667fe5fbd1ad36c5dbec6192d42371a0ba6c95"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-20.zip",
+      "sha256": "3f2277615437c21b91945a5157cf9009ad82ddb889db71d3ac50ee61b7495b14"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-21.zip",
+      "sha256": "ad1e688304f31a56bfb655330f080ecadb5eeb68a28ad8f29a486797806b22a7"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-22.zip",
+      "sha256": "5fe4a5e4348f7736fb12e488096cc03bcb17c751651b6807cceba49757174cfa"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-23.zip",
+      "sha256": "8a6ed517643a42b498195ff38cf13e25aa70e8d55a5bbc8b1c5a947c09380c85"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-24.zip",
+      "sha256": "29323217f0669ebedfe1a5dedf9057b013fd0465919e6789db4bf7326799afdf"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-25.zip",
+      "sha256": "65efa168848c09ad63a11b65c118ac9673618923b5301344bf407122d95fb9d3"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-26.zip",
+      "sha256": "32bfc63c0d0e49b134a1e974b472e4566d811ee74624930b3cc7c3851ad514c8"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-27.zip",
+      "sha256": "3799edce7f96da329fb94fef11d73cf2b7af1765fb1ba4b162e3583053870490"
+    },
+    {
+      "pair": "ETH/USD",
+      "file": "ETHUSDT-5m-2026-09-28.zip",
+      "sha256": "2914c05a1fdc7b8fcf3a243634865386b5ed40f24400f651c0a3a9d9608c78e9"
+    }
+  ],
+  "simulation_version": "boundary-decisions-v3",
+  "source_sha256": {
+    "src/roostoo_bot/__init__.py": "6dfee1f11a69875b6246e031ce826fc111fc08192539af8ee4b3ff9a2de916f4",
+    "src/roostoo_bot/backtest.py": "d4bdab2a6ce402f89f2e049e8c8f7cd15cdaf53d2a3a090b6c309b47c5957569",
+    "src/roostoo_bot/client.py": "4f17c7f58c87138f76ec55ffd8394f3d31a0dacba1e391b1ad421eeaabcc8beb",
+    "src/roostoo_bot/config.py": "96434d4d49a20a2bcd3793021f9cb3f950b3b9a819c94fb1a5864be9245b0142",
+    "src/roostoo_bot/download_data.py": "899af4a6be95543f590a03f4ae55cf441ac14bcf04a81bd84024be4a69a5f273",
+    "src/roostoo_bot/engine.py": "2e71aba33a26560e56491af8015fc17fa9376790c4e4d3aa1c4846bc2557de65",
+    "src/roostoo_bot/logging_utils.py": "d17be967bfca0efc1e4417661cd5c8225247ae0eeb3dd7c54cd170f6fb005fb5",
+    "src/roostoo_bot/main.py": "0021c5f2754999e4469148a2044f78ac1e8a4a337702e960c69b83f5b58e7318",
+    "src/roostoo_bot/market_data.py": "7fcca5823a777a7808559beddc037acee8ba6e06f3bc9c8201f93e28073ab11e",
+    "src/roostoo_bot/news.py": "1eb10a3e4095b0aefc89b159c93f386b62380d8a67a845ea03257e0a3bb9ab5f",
+    "src/roostoo_bot/portfolio.py": "0208a789e03462f6a2f467d3a49daa2508f474121c0d432922a3d142440cd898",
+    "src/roostoo_bot/portfolio_backtest.py": "61bf40f66eccf9d5dc17515f9fec8d72fc950ede8b41cda2d76662ace47a7569",
+    "src/roostoo_bot/preflight.py": "6a4bb01cf25a7cba5ea6d46bc15d1dd00c00f8eeb2dac99459581f338e47a5f3",
+    "src/roostoo_bot/pullback_research.py": "983ad55fbe7325fcf0febbd79267e58d39e4bd312ff7273c818177b4738bc3e6",
+    "src/roostoo_bot/research.py": "c9675e99df1b2bab535fefc93ba973c6dfdbddd90464d87de9995478c010ebcc",
+    "src/roostoo_bot/state.py": "2691da176be604a3c7c2cfc5cb6f4eb34b4d85e0f7b0eb8a71325ce95f8288b0",
+    "src/roostoo_bot/strategy.py": "dd9fb8c65e72b118e20f051371983dbdc92332eea457e231e5898e3afa3a35e8"
+  },
+  "configs": {
+    "baseline": {
+      "dry_run": true,
+      "pairs": [
+        "BTC/USD",
+        "ETH/USD"
+      ],
+      "poll_seconds": 300,
+      "fast_window": 12,
+      "slow_window": 48,
+      "max_asset_weight": 0.35,
+      "rebalance_band": 0.05,
+      "min_trade_usd": 250,
+      "max_daily_loss": 0.03,
+      "max_drawdown": 0.08,
+      "credential_set": "testing",
+      "strategy": "baseline",
+      "decision_every_bars": 1,
+      "signal_buffer": 0.005,
+      "fee_rate": 0.001,
+      "slippage_rate": 0.0005,
+      "cash_reserve": 0.01,
+      "max_spread": 0.005,
+      "max_quote_age_seconds": 30,
+      "max_sample_lag_seconds": 30,
+      "live_trading_enabled": false,
+      "signal_source": "binance"
+    },
+    "buffered_trend": {
+      "dry_run": true,
+      "pairs": [
+        "BTC/USD",
+        "ETH/USD"
+      ],
+      "poll_seconds": 300,
+      "fast_window": 144,
+      "slow_window": 576,
+      "max_asset_weight": 0.35,
+      "rebalance_band": 0.05,
+      "min_trade_usd": 250,
+      "max_daily_loss": 0.03,
+      "max_drawdown": 0.08,
+      "credential_set": "testing",
+      "strategy": "buffered_trend",
+      "decision_every_bars": 12,
+      "signal_buffer": 0.005,
+      "fee_rate": 0.001,
+      "slippage_rate": 0.0005,
+      "cash_reserve": 0.01,
+      "max_spread": 0.005,
+      "max_quote_age_seconds": 30,
+      "max_sample_lag_seconds": 30,
+      "live_trading_enabled": false,
+      "signal_source": "binance"
+    },
+    "breakout": {
+      "dry_run": true,
+      "pairs": [
+        "BTC/USD",
+        "ETH/USD"
+      ],
+      "poll_seconds": 300,
+      "fast_window": 144,
+      "slow_window": 576,
+      "max_asset_weight": 0.35,
+      "rebalance_band": 0.05,
+      "min_trade_usd": 250,
+      "max_daily_loss": 0.03,
+      "max_drawdown": 0.08,
+      "credential_set": "testing",
+      "strategy": "breakout",
+      "decision_every_bars": 12,
+      "signal_buffer": 0.005,
+      "fee_rate": 0.001,
+      "slippage_rate": 0.0005,
+      "cash_reserve": 0.01,
+      "max_spread": 0.005,
+      "max_quote_age_seconds": 30,
+      "max_sample_lag_seconds": 30,
+      "live_trading_enabled": false,
+      "signal_source": "binance"
+    }
+  },
+  "plan_sha256": "262dde01d127d8813752fdb0a1d364fde6088fc24439606f1a8c1706a134deed"
+}

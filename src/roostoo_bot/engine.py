@@ -1,95 +1,199 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
-import math
-from typing import Any
+from dataclasses import asdict
+import hashlib
+import json
+import time
 
-from .client import RoostooClient
+from .client import OrderRejected, RoostooAPIError, RoostooClient
 from .config import Settings
 from .logging_utils import event
+from .market_data import MarketDataError, fetch_closed_history
+from .portfolio import PairRules, Quote, balances, equity, next_order, number, strategy_targets, update_risk
 from .state import StateStore
-from .strategy import target_weight
+
+TERMINAL = {"FILLED", "CANCELED", "CANCELLED", "REJECTED", "EXPIRED"}
 
 
 class BotEngine:
-    def __init__(self, client: RoostooClient, settings: Settings) -> None:
-        self.client = client
-        self.settings = settings
-        self.store = StateStore(settings.data_dir)
+    def __init__(self, client: RoostooClient, settings: Settings, *, clock=time.time, market_data=fetch_closed_history) -> None:
+        if settings.signal_source == "offline":
+            raise ValueError("offline research settings cannot run in BotEngine")
+        self.client, self.settings, self.clock = client, settings, clock
+        self.market_data = market_data
+        namespace = f"{settings.credential_set}.{'dry' if settings.dry_run else 'live'}"
+        self.store = StateStore(settings.data_dir, namespace)
+        self.rules: dict[str, PairRules] = {}
+        self.rules_at = 0.0
 
-    def _mid_prices(self) -> dict[str, float]:
-        result: dict[str, float] = {}
-        for pair in self.settings.pairs:
-            data = self.client.ticker(pair)["Data"][pair]
-            bid, ask = float(data["MaxBid"]), float(data["MinAsk"])
-            result[pair] = (bid + ask) / 2
-        return result
+    def _quotes(self) -> dict[str, Quote]:
+        payload = self.client.ticker()
+        timestamp = number(payload["ServerTime"]) / 1000
+        if abs(self.clock() - timestamp) > self.settings.max_quote_age_seconds:
+            raise ValueError("ticker timestamp is stale or server clock differs")
+        return {pair: Quote(float(payload["Data"][pair]["MaxBid"]), float(payload["Data"][pair]["MinAsk"])) for pair in self.settings.pairs}
 
-    @staticmethod
-    def _equity(wallet: dict[str, Any], prices: dict[str, float]) -> float:
-        total = float(wallet.get("USD", {}).get("Free", 0)) + float(wallet.get("USD", {}).get("Lock", 0))
-        for pair, price in prices.items():
-            coin = pair.split("/")[0]
-            balance = wallet.get(coin, {})
-            total += price * (float(balance.get("Free", 0)) + float(balance.get("Lock", 0)))
-        return total
+    def _rules(self) -> None:
+        if not self.rules or self.clock() - self.rules_at >= 3600:
+            payload = self.client.exchange_info()
+            if payload.get("IsRunning") is not True:
+                raise ValueError("exchange is not running")
+            self.rules = {pair: PairRules.from_api(payload["TradePairs"][pair]) for pair in self.settings.pairs}
+            self.rules_at = self.clock()
 
-    def _safe_to_trade(self, state: dict[str, Any], equity: float) -> tuple[bool, str]:
-        today = datetime.now(timezone.utc).date().isoformat()
-        if state.get("day") != today:
-            state["day"] = today
-            state["day_start_equity"] = equity
-        state["peak_equity"] = max(float(state.get("peak_equity", 0)), equity)
-        daily_start = float(state["day_start_equity"])
-        peak = float(state["peak_equity"])
-        if daily_start > 0 and (equity / daily_start - 1) <= -self.settings.max_daily_loss:
-            return False, "daily_loss_limit"
-        if peak > 0 and (equity / peak - 1) <= -self.settings.max_drawdown:
-            return False, "drawdown_limit"
-        return True, "ok"
-
-    def run_once(self) -> None:
-        state = self.store.load()
-        # This is intentionally first: a failed API call must still leave an
-        # audit trail for diagnosis and competition-review evidence.
-        event(self.settings.data_dir, "cycle_started", pairs=list(self.settings.pairs), dry_run=self.settings.dry_run)
-        prices = self._mid_prices()
-        history = state.setdefault("prices", {})
-        for pair, price in prices.items():
-            samples = history.setdefault(pair, [])
-            samples.append(price)
-            del samples[: max(0, len(samples) - self.settings.slow_window - 1)]
-
-        wallet = self.client.balance()["Wallet"]
-        equity = self._equity(wallet, prices)
-        allowed, reason = self._safe_to_trade(state, equity)
-        event(self.settings.data_dir, "cycle", equity=equity, prices=prices, trading_allowed=allowed, reason=reason)
-        if not allowed:
+    def _detail(self, state: dict, detail: dict) -> bool:
+        inflight = state["inflight"]
+        if str(detail.get("OrderID")) != str(inflight.get("order_id")):
+            raise ValueError("order ID mismatch")
+        if detail.get("Pair") != inflight["pair"] or detail.get("Side") != inflight["side"]:
+            raise ValueError("order identity mismatch")
+        if "FilledQuantity" not in detail:
+            raise ValueError("order report missing FilledQuantity")
+        filled = number(detail["FilledQuantity"])
+        previous_filled = number(inflight.get("filled_quantity_seen", 0))
+        if filled + 1e-10 < previous_filled:
+            raise ValueError("cumulative filled quantity decreased; order remains unresolved")
+        requested = number(inflight["quantity"])
+        reported = number(detail["Quantity"])
+        if abs(reported - requested) > 1e-10 or filled > requested + 1e-10:
+            raise ValueError("order quantity mismatch")
+        status = detail.get("Status")
+        if status not in TERMINAL | {"PENDING", "PARTIALLY_FILLED", "PARTIAL"}:
+            raise ValueError("unknown order status")
+        if status == "FILLED" and abs(filled - requested) > 1e-10:
+            raise ValueError("FILLED response has incomplete quantity")
+        average_price = number(detail.get("FilledAverPrice", 0))
+        if filled > 0 and average_price <= 0:
+            raise ValueError("executed order has no valid fill price")
+        commission = number(detail["CommissionChargeValue"]) if "CommissionChargeValue" in detail else None
+        # Persist the highest validated cumulative fill across restarts. A stale
+        # terminal response must not erase evidence of an actual partial fill.
+        inflight["filled_quantity_seen"] = max(previous_filled, filled)
+        self.store.save(state)  # preserve progress even if the event log fails
+        event(self.settings.data_dir, "order_status", order_id=inflight["order_id"], pair=inflight["pair"], side=inflight["side"], status=status, filled_quantity=filled,
+              average_price=average_price, commission=commission)
+        if status in TERMINAL:
+            state.pop("inflight")
             self.store.save(state)
-            return
+        return status in TERMINAL
 
-        for pair, price in prices.items():
-            coin = pair.split("/")[0]
-            desired_weight = target_weight(history[pair], self.settings.fast_window, self.settings.slow_window, self.settings.max_asset_weight)
-            current_quantity = float(wallet.get(coin, {}).get("Free", 0))
-            current_value = current_quantity * price
-            target_value = equity * desired_weight
-            delta_value = target_value - current_value
-            if abs(delta_value) < max(self.settings.min_trade_usd, equity * self.settings.rebalance_band):
-                event(self.settings.data_dir, "hold", pair=pair, current_value=current_value, target_value=target_value)
-                continue
+    def _reconcile(self, state: dict) -> bool:
+        inflight = state.get("inflight")
+        if not inflight:
+            return True
+        if not inflight.get("order_id"):
+            event(self.settings.data_dir, "execution_blocked", reason="unknown_submit_outcome_requires_review")
+            return False
+        payload = self.client.query_order(str(inflight["order_id"]))
+        matches = [row for row in payload.get("OrderMatched", []) if str(row.get("OrderID")) == str(inflight["order_id"])]
+        if len(matches) != 1:
+            event(self.settings.data_dir, "execution_blocked", reason="order_not_reconciled")
+            return False
+        return self._detail(state, matches[0])
 
-            side = "BUY" if delta_value > 0 else "SELL"
-            raw_quantity = abs(delta_value) / price
-            quantity = math.floor(raw_quantity * 1_000_000) / 1_000_000
-            if side == "SELL":
-                quantity = min(quantity, current_quantity)
-            if quantity <= 0:
-                continue
-            order = {"pair": pair, "side": side, "quantity": quantity, "estimated_value": quantity * price}
-            if self.settings.dry_run:
-                event(self.settings.data_dir, "dry_run_order", **order)
+    def run_once(self) -> str:
+        with self.store.lock():
+            return self._run_locked()
+
+    def _run_locked(self) -> str:
+        state = self.store.load()
+        identity = hashlib.sha256(self.settings.api_key.encode()).hexdigest()[:16]
+        if state.get("account", identity) != identity:
+            raise ValueError("account changed; use a separate DATA_DIR")
+        state["account"] = identity
+        config = {key: value for key, value in asdict(self.settings).items() if key not in {"api_key", "secret_key", "data_dir"}}
+        signature = hashlib.sha256(json.dumps(config, sort_keys=True).encode()).hexdigest()
+        if state.get("config", signature) != signature:
+            state.update(prices={}, signals={})
+            state.pop("history_bar", None)
+            state.pop("pullback_entries", None)
+        state["config"] = signature
+        now = self.clock()
+        bar = int(now // self.settings.poll_seconds)
+        event(self.settings.data_dir, "cycle_started", dry_run=self.settings.dry_run, strategy=self.settings.strategy, bar=bar)
+        if state.get("last_bar", -1) >= bar:
+            event(self.settings.data_dir, "cycle_skipped", reason="bar_already_processed")
+            return "held"
+        self._rules()
+        quotes = self._quotes()
+        wallet = balances(self.client.balance()["Wallet"], self.settings.pairs)
+        value = equity(wallet, quotes)
+        reason = update_risk(state.setdefault("risk", {}), value, now, self.settings)
+        history = state.setdefault("prices", {})
+        targets = None
+        signal_unavailable = False
+        if reason != "ok":
+            targets = dict.fromkeys(self.settings.pairs, 0.0)
+        elif now % self.settings.poll_seconds <= self.settings.max_sample_lag_seconds:
+            if self.settings.signal_source == "binance":
+                try:
+                    history = self.market_data(self.settings.pairs, self.settings.slow_window + 1, bar * 300)
+                    state["prices"], state["history_bar"] = history, bar
+                    targets = strategy_targets(history, state, self.settings, bar)
+                except MarketDataError as exc:
+                    signal_unavailable = True
+                    event(self.settings.data_dir, "signal_data_unavailable", reason=str(exc))
             else:
-                response = self.client.place_market_order(pair, side, quantity)
-                event(self.settings.data_dir, "order_submitted", **order, response=response)
+                if state.get("history_bar", bar - 1) != bar - 1:
+                    history = state["prices"] = {}
+                    state["signals"] = {}
+                    event(self.settings.data_dir, "history_reset", reason="missing_sample")
+                for pair, quote in quotes.items():
+                    samples = history.setdefault(pair, [])
+                    samples.append(quote.mid)
+                    del samples[:max(0, len(samples) - self.settings.slow_window - 1)]
+                state["history_bar"] = bar
+                targets = strategy_targets(history, state, self.settings, bar)
+        else:
+            event(self.settings.data_dir, "sample_skipped", reason="late_in_five_minute_bucket")
+        state["last_bar"] = bar
         self.store.save(state)
+        event(self.settings.data_dir, "cycle", equity=value, prices={p:q.mid for p,q in quotes.items()}, reason=reason, targets=targets)
+        if not self._reconcile(state):
+            return "blocked"
+        if targets is None:
+            return "blocked" if signal_unavailable else "held"
+        pending = self.client.pending_count()
+        count = pending.get("TotalPending")
+        if not isinstance(count, int) or isinstance(count, bool) or count < 0:
+            raise ValueError("invalid pending order count")
+        if count:
+            event(self.settings.data_dir, "execution_blocked", reason="pending_orders", count=count)
+            return "blocked"
+        traded: set[str] = set()
+        for _ in self.settings.pairs:
+            wallet = balances(self.client.balance()["Wallet"], self.settings.pairs)
+            quotes = self._quotes()
+            reason = update_risk(state["risk"], equity(wallet, quotes), self.clock(), self.settings)
+            if reason != "ok":
+                targets = dict.fromkeys(self.settings.pairs, 0.0)
+            self.store.save(state)
+            intent = next_order(wallet, quotes, self.rules, targets, self.settings, excluded=traded, risk_reason=reason)
+            if intent is None:
+                break
+            traded.add(intent.pair)
+            if self.settings.dry_run:
+                event(self.settings.data_dir, "dry_run_order", **asdict(intent))
+                break  # no invented fills or cash in observation logs
+            if not self.settings.live_trading_enabled:
+                raise ValueError("live trading is not enabled")
+            state["inflight"] = {**asdict(intent), "submitted_at": self.clock()}
+            self.store.save(state)  # durable BEFORE the only non-idempotent call
+            try:
+                payload = self.client.place_market_order(intent.pair, intent.side, intent.quantity)
+            except OrderRejected:
+                state.pop("inflight")
+                self.store.save(state)
+                event(self.settings.data_dir, "order_rejected", pair=intent.pair)
+                return "blocked"
+            except RoostooAPIError:
+                event(self.settings.data_dir, "execution_blocked", reason="submit_outcome_unknown")
+                raise
+            detail = payload.get("OrderDetail", {})
+            if detail.get("OrderID") is None:
+                raise ValueError("submit response missing OrderID; review required")
+            state["inflight"]["order_id"] = str(detail["OrderID"])
+            self.store.save(state)
+            if not self._detail(state, detail):
+                return "blocked"
+        return "ok"

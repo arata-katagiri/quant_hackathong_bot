@@ -1,0 +1,13 @@
+{
+  "stage": "march",
+  "gates": {
+    "full_month_positive_base_and_stress": false,
+    "all_periods_drawdown_at_most_8_percent": true,
+    "both_windows_8_active_utc_dates_base_and_stress": false
+  },
+  "stage_passed": false,
+  "advance_to_april": false,
+  "strategy_approved_for_live": false,
+  "qualification_verified": false,
+  "activity_is_only_a_fill_date_proxy": true
+}

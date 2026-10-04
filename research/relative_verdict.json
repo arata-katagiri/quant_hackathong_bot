@@ -1,0 +1,25 @@
+{
+  "stage": "screen",
+  "gates": {
+    "base": {
+      "quarter_positive_and_above_breadth_control": false,
+      "two_positive_months": false,
+      "four_positive_windows": false,
+      "four_windows_with_8_active_utc_dates": true,
+      "all_periods_drawdown_at_most_8_percent": false
+    },
+    "stress": {
+      "quarter_positive_and_above_breadth_control": false,
+      "two_positive_months": false,
+      "four_positive_windows": false,
+      "four_windows_with_8_active_utc_dates": true,
+      "all_periods_drawdown_at_most_8_percent": false
+    }
+  },
+  "stage_passed": false,
+  "advance_to_validation": false,
+  "screening_data_previously_inspected": true,
+  "strategy_approved_for_live": false,
+  "qualification_verified": false,
+  "april_2026_opened": false
+}

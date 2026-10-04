@@ -1,0 +1,2281 @@
+[
+  {
+    "file": "BTCUSDT-5m-2020-12.zip",
+    "rows": 8870,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2020-12-21"
+    ],
+    "examples": [
+      {
+        "row": 5930,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1608559500000",
+        "close_time": "1608558440521"
+      }
+    ]
+  },
+  {
+    "file": "BTCUSDT-5m-2021-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2021-02.zip",
+    "rows": 8049,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-02-11"
+    ],
+    "examples": [
+      {
+        "row": 2925,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1613014800000",
+        "close_time": "1613014854773"
+      }
+    ]
+  },
+  {
+    "file": "BTCUSDT-5m-2021-03.zip",
+    "rows": 8910,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2021-04.zip",
+    "rows": 8554,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-04-25"
+    ],
+    "examples": [
+      {
+        "row": 6931,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1619323200000",
+        "close_time": "1619323258146"
+      }
+    ]
+  },
+  {
+    "file": "BTCUSDT-5m-2021-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2021-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2021-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2021-08.zip",
+    "rows": 8874,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-08-13"
+    ],
+    "examples": [
+      {
+        "row": 3480,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1628819700000",
+        "close_time": "1628819999000"
+      }
+    ]
+  },
+  {
+    "file": "BTCUSDT-5m-2021-09.zip",
+    "rows": 8616,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2021-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2021-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2021-12.zip",
+    "rows": 8928,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-12-24"
+    ],
+    "examples": [
+      {
+        "row": 6684,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1640321700000",
+        "close_time": "1640321994362"
+      }
+    ]
+  },
+  {
+    "file": "BTCUSDT-5m-2022-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2022-02.zip",
+    "rows": 8064,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2022-03.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2022-04.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2022-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2022-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2022-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2022-08.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2022-09.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2022-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2022-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2022-12.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2023-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2023-02.zip",
+    "rows": 8064,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2023-03.zip",
+    "rows": 8912,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2023-03-24"
+    ],
+    "examples": [
+      {
+        "row": 6776,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1679661300000",
+        "close_time": "1679661581646"
+      }
+    ]
+  },
+  {
+    "file": "BTCUSDT-5m-2023-04.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2023-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2023-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2023-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2023-08.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2023-09.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2023-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2023-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2023-12.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2024-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2024-02.zip",
+    "rows": 8352,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2024-03.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2024-04.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2024-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2024-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2024-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2024-08.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2024-09.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2024-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2024-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BTCUSDT-5m-2024-12.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2020-12.zip",
+    "rows": 8870,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2020-12-21"
+    ],
+    "examples": [
+      {
+        "row": 5930,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1608559500000",
+        "close_time": "1608558440528"
+      }
+    ]
+  },
+  {
+    "file": "ETHUSDT-5m-2021-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2021-02.zip",
+    "rows": 8049,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-02-11"
+    ],
+    "examples": [
+      {
+        "row": 2925,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1613014800000",
+        "close_time": "1613014855829"
+      }
+    ]
+  },
+  {
+    "file": "ETHUSDT-5m-2021-03.zip",
+    "rows": 8910,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2021-04.zip",
+    "rows": 8554,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-04-25"
+    ],
+    "examples": [
+      {
+        "row": 6931,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1619323200000",
+        "close_time": "1619323259271"
+      }
+    ]
+  },
+  {
+    "file": "ETHUSDT-5m-2021-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2021-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2021-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2021-08.zip",
+    "rows": 8874,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-08-13"
+    ],
+    "examples": [
+      {
+        "row": 3480,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1628819700000",
+        "close_time": "1628819999000"
+      }
+    ]
+  },
+  {
+    "file": "ETHUSDT-5m-2021-09.zip",
+    "rows": 8616,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2021-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2021-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2021-12.zip",
+    "rows": 8928,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-12-24"
+    ],
+    "examples": [
+      {
+        "row": 6684,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1640321700000",
+        "close_time": "1640321996158"
+      }
+    ]
+  },
+  {
+    "file": "ETHUSDT-5m-2022-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2022-02.zip",
+    "rows": 8064,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2022-03.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2022-04.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2022-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2022-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2022-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2022-08.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2022-09.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2022-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2022-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2022-12.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2023-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2023-02.zip",
+    "rows": 8064,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2023-03.zip",
+    "rows": 8912,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2023-03-24"
+    ],
+    "examples": [
+      {
+        "row": 6776,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1679661300000",
+        "close_time": "1679661583061"
+      }
+    ]
+  },
+  {
+    "file": "ETHUSDT-5m-2023-04.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2023-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2023-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2023-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2023-08.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2023-09.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2023-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2023-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2023-12.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2024-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2024-02.zip",
+    "rows": 8352,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2024-03.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2024-04.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2024-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2024-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2024-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2024-08.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2024-09.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2024-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2024-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "ETHUSDT-5m-2024-12.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2020-12.zip",
+    "rows": 8870,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2020-12-21"
+    ],
+    "examples": [
+      {
+        "row": 5930,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1608559500000",
+        "close_time": "1608558441656"
+      }
+    ]
+  },
+  {
+    "file": "XRPUSDT-5m-2021-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2021-02.zip",
+    "rows": 8049,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-02-11"
+    ],
+    "examples": [
+      {
+        "row": 2925,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1613014800000",
+        "close_time": "1613014859081"
+      }
+    ]
+  },
+  {
+    "file": "XRPUSDT-5m-2021-03.zip",
+    "rows": 8910,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2021-04.zip",
+    "rows": 8554,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-04-25"
+    ],
+    "examples": [
+      {
+        "row": 6931,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1619323200000",
+        "close_time": "1619323262802"
+      }
+    ]
+  },
+  {
+    "file": "XRPUSDT-5m-2021-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2021-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2021-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2021-08.zip",
+    "rows": 8874,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-08-13"
+    ],
+    "examples": [
+      {
+        "row": 3480,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1628819700000",
+        "close_time": "1628819999000"
+      }
+    ]
+  },
+  {
+    "file": "XRPUSDT-5m-2021-09.zip",
+    "rows": 8616,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2021-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2021-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2021-12.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2022-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2022-02.zip",
+    "rows": 8064,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2022-03.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2022-04.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2022-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2022-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2022-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2022-08.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2022-09.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2022-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2022-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2022-12.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2023-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2023-02.zip",
+    "rows": 8064,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2023-03.zip",
+    "rows": 8912,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2023-03-24"
+    ],
+    "examples": [
+      {
+        "row": 6776,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1679661300000",
+        "close_time": "1679661588301"
+      }
+    ]
+  },
+  {
+    "file": "XRPUSDT-5m-2023-04.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2023-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2023-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2023-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2023-08.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2023-09.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2023-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2023-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2023-12.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2024-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2024-02.zip",
+    "rows": 8352,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2024-03.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2024-04.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2024-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2024-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2024-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2024-08.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2024-09.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2024-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2024-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "XRPUSDT-5m-2024-12.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2020-12.zip",
+    "rows": 8870,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2020-12-21"
+    ],
+    "examples": [
+      {
+        "row": 5930,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1608559500000",
+        "close_time": "1608558440924"
+      }
+    ]
+  },
+  {
+    "file": "BNBUSDT-5m-2021-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2021-02.zip",
+    "rows": 8049,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-02-11"
+    ],
+    "examples": [
+      {
+        "row": 2925,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1613014800000",
+        "close_time": "1613014854577"
+      }
+    ]
+  },
+  {
+    "file": "BNBUSDT-5m-2021-03.zip",
+    "rows": 8910,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2021-04.zip",
+    "rows": 8554,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-04-25"
+    ],
+    "examples": [
+      {
+        "row": 6931,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1619323200000",
+        "close_time": "1619323257981"
+      }
+    ]
+  },
+  {
+    "file": "BNBUSDT-5m-2021-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2021-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2021-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2021-08.zip",
+    "rows": 8874,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-08-13"
+    ],
+    "examples": [
+      {
+        "row": 3480,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1628819700000",
+        "close_time": "1628819999000"
+      }
+    ]
+  },
+  {
+    "file": "BNBUSDT-5m-2021-09.zip",
+    "rows": 8616,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2021-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2021-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2021-12.zip",
+    "rows": 8928,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-12-24"
+    ],
+    "examples": [
+      {
+        "row": 6684,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1640321700000",
+        "close_time": "1640321994118"
+      }
+    ]
+  },
+  {
+    "file": "BNBUSDT-5m-2022-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2022-02.zip",
+    "rows": 8064,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2022-03.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2022-04.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2022-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2022-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2022-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2022-08.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2022-09.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2022-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2022-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2022-12.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2023-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2023-02.zip",
+    "rows": 8064,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2023-03.zip",
+    "rows": 8912,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2023-03-24"
+    ],
+    "examples": [
+      {
+        "row": 6776,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1679661300000",
+        "close_time": "1679661581451"
+      }
+    ]
+  },
+  {
+    "file": "BNBUSDT-5m-2023-04.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2023-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2023-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2023-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2023-08.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2023-09.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2023-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2023-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2023-12.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2024-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2024-02.zip",
+    "rows": 8352,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2024-03.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2024-04.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2024-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2024-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2024-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2024-08.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2024-09.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2024-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2024-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "BNBUSDT-5m-2024-12.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2020-12.zip",
+    "rows": 8870,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2020-12-21"
+    ],
+    "examples": [
+      {
+        "row": 5930,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1608559500000",
+        "close_time": "1608558443498"
+      }
+    ]
+  },
+  {
+    "file": "SOLUSDT-5m-2021-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2021-02.zip",
+    "rows": 8049,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-02-11"
+    ],
+    "examples": [
+      {
+        "row": 2925,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1613014800000",
+        "close_time": "1613014857968"
+      }
+    ]
+  },
+  {
+    "file": "SOLUSDT-5m-2021-03.zip",
+    "rows": 8910,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2021-04.zip",
+    "rows": 8554,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-04-25"
+    ],
+    "examples": [
+      {
+        "row": 6931,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1619323200000",
+        "close_time": "1619323261539"
+      }
+    ]
+  },
+  {
+    "file": "SOLUSDT-5m-2021-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2021-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2021-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2021-08.zip",
+    "rows": 8874,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-08-13"
+    ],
+    "examples": [
+      {
+        "row": 3480,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1628819700000",
+        "close_time": "1628819999000"
+      }
+    ]
+  },
+  {
+    "file": "SOLUSDT-5m-2021-09.zip",
+    "rows": 8616,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2021-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2021-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2021-12.zip",
+    "rows": 8928,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2021-12-24"
+    ],
+    "examples": [
+      {
+        "row": 6684,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1640321700000",
+        "close_time": "1640322000475"
+      }
+    ]
+  },
+  {
+    "file": "SOLUSDT-5m-2022-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2022-02.zip",
+    "rows": 8064,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2022-03.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2022-04.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2022-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2022-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2022-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2022-08.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2022-09.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2022-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2022-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2022-12.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2023-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2023-02.zip",
+    "rows": 8064,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2023-03.zip",
+    "rows": 8912,
+    "invalid": 1,
+    "reasons": {
+      "invalid kline close timestamp": 1
+    },
+    "dates": [
+      "2023-03-24"
+    ],
+    "examples": [
+      {
+        "row": 6776,
+        "reason": "invalid kline close timestamp",
+        "open_time": "1679661300000",
+        "close_time": "1679661586948"
+      }
+    ]
+  },
+  {
+    "file": "SOLUSDT-5m-2023-04.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2023-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2023-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2023-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2023-08.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2023-09.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2023-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2023-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2023-12.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2024-01.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2024-02.zip",
+    "rows": 8352,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2024-03.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2024-04.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2024-05.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2024-06.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2024-07.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2024-08.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2024-09.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2024-10.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2024-11.zip",
+    "rows": 8640,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  },
+  {
+    "file": "SOLUSDT-5m-2024-12.zip",
+    "rows": 8928,
+    "invalid": 0,
+    "reasons": {},
+    "dates": [],
+    "examples": []
+  }
+]

@@ -1,0 +1,444 @@
+{
+  "reports": {
+    "quarter": {
+      "scheduled_asset_observations": 445,
+      "feature_coverage": 1.0,
+      "selected_observations": 147,
+      "opportunity_dates_utc": 66,
+      "selected_by_pair": {
+        "BTC/USD": 15,
+        "ETH/USD": 22,
+        "XRP/USD": 25,
+        "BNB/USD": 54,
+        "SOL/USD": 31
+      },
+      "coverage_by_pair": {
+        "BTC/USD": 1.0,
+        "ETH/USD": 1.0,
+        "XRP/USD": 1.0,
+        "BNB/USD": 1.0,
+        "SOL/USD": 1.0
+      },
+      "gross": {
+        "mean_return": -0.008132644646442038,
+        "median_return": -0.006135942033581254,
+        "mean_basket_advantage": -0.0016105909384570483,
+        "win_fraction": 0.3945578231292517,
+        "worst_isolated_return": -0.19419680881267398
+      },
+      "base": {
+        "mean_return": -0.011103788511133524,
+        "median_return": -0.009113067031420896,
+        "mean_basket_advantage": -0.0016057664048543462,
+        "win_fraction": 0.3673469387755102,
+        "worst_isolated_return": -0.19661059649781443
+      },
+      "stress": {
+        "mean_return": -0.013079606597888177,
+        "median_return": -0.011092862586649765,
+        "mean_basket_advantage": -0.0016025580779652803,
+        "win_fraction": 0.35374149659863946,
+        "worst_isolated_return": -0.1982157713338637
+      }
+    },
+    "2025-01": {
+      "scheduled_asset_observations": 150,
+      "feature_coverage": 1.0,
+      "selected_observations": 59,
+      "opportunity_dates_utc": 26,
+      "selected_by_pair": {
+        "BTC/USD": 9,
+        "ETH/USD": 7,
+        "XRP/USD": 10,
+        "BNB/USD": 18,
+        "SOL/USD": 15
+      },
+      "coverage_by_pair": {
+        "BTC/USD": 1.0,
+        "ETH/USD": 1.0,
+        "XRP/USD": 1.0,
+        "BNB/USD": 1.0,
+        "SOL/USD": 1.0
+      },
+      "gross": {
+        "mean_return": 0.005576669906744703,
+        "median_return": 0.0001931558445738002,
+        "mean_basket_advantage": -0.0029127800790338617,
+        "win_fraction": 0.5084745762711864,
+        "worst_isolated_return": -0.08130567508719089
+      },
+      "base": {
+        "mean_return": 0.0025644597184122883,
+        "median_return": -0.0028029279991520495,
+        "mean_basket_advantage": -0.0029040548310313853,
+        "win_fraction": 0.4576271186440678,
+        "worst_isolated_return": -0.08405762875544986
+      },
+      "stress": {
+        "mean_return": 0.0005613324239243515,
+        "median_return": -0.004795331234221378,
+        "mean_basket_advantage": -0.0028982525193292936,
+        "win_fraction": 0.4576271186440678,
+        "worst_isolated_return": -0.0858876848144221
+      }
+    },
+    "2025-01_01_14": {
+      "scheduled_asset_observations": 65,
+      "feature_coverage": 1.0,
+      "selected_observations": 26,
+      "opportunity_dates_utc": 12,
+      "selected_by_pair": {
+        "BTC/USD": 1,
+        "ETH/USD": 4,
+        "XRP/USD": 3,
+        "BNB/USD": 9,
+        "SOL/USD": 9
+      },
+      "coverage_by_pair": {
+        "BTC/USD": 1.0,
+        "ETH/USD": 1.0,
+        "XRP/USD": 1.0,
+        "BNB/USD": 1.0,
+        "SOL/USD": 1.0
+      },
+      "gross": {
+        "mean_return": -0.004087253601941471,
+        "median_return": -0.004077924332284433,
+        "mean_basket_advantage": -0.003627109466696644,
+        "win_fraction": 0.38461538461538464,
+        "worst_isolated_return": -0.08130567508719089
+      },
+      "base": {
+        "mean_return": -0.007070515456722335,
+        "median_return": -0.0070612141329415845,
+        "mean_basket_advantage": -0.003616244441267219,
+        "win_fraction": 0.38461538461538464,
+        "worst_isolated_return": -0.08405762875544986
+      },
+      "stress": {
+        "mean_return": -0.009054392037136039,
+        "median_return": -0.009045109297432685,
+        "mean_basket_advantage": -0.0036090191722347588,
+        "win_fraction": 0.38461538461538464,
+        "worst_isolated_return": -0.0858876848144221
+      }
+    },
+    "2025-01_15_28": {
+      "scheduled_asset_observations": 65,
+      "feature_coverage": 1.0,
+      "selected_observations": 30,
+      "opportunity_dates_utc": 12,
+      "selected_by_pair": {
+        "BTC/USD": 7,
+        "ETH/USD": 3,
+        "XRP/USD": 5,
+        "BNB/USD": 9,
+        "SOL/USD": 6
+      },
+      "coverage_by_pair": {
+        "BTC/USD": 1.0,
+        "ETH/USD": 1.0,
+        "XRP/USD": 1.0,
+        "BNB/USD": 1.0,
+        "SOL/USD": 1.0
+      },
+      "gross": {
+        "mean_return": 0.011748666488421707,
+        "median_return": 0.001018436259928035,
+        "mean_basket_advantage": -0.0025031092537034934,
+        "win_fraction": 0.5666666666666667,
+        "worst_isolated_return": -0.05057569811668183
+      },
+      "base": {
+        "mean_return": 0.008717968051960586,
+        "median_return": -0.00198011971561024,
+        "mean_basket_advantage": -0.0024956111768067546,
+        "win_fraction": 0.4666666666666667,
+        "worst_isolated_return": -0.053419703592115786
+      },
+      "stress": {
+        "mean_return": 0.006702546026315659,
+        "median_return": -0.003974166924505584,
+        "mean_basket_advantage": -0.0024906249369533286,
+        "win_fraction": 0.4666666666666667,
+        "worst_isolated_return": -0.05531097433264398
+      }
+    },
+    "2025-02": {
+      "scheduled_asset_observations": 135,
+      "feature_coverage": 1.0,
+      "selected_observations": 33,
+      "opportunity_dates_utc": 17,
+      "selected_by_pair": {
+        "BTC/USD": 0,
+        "ETH/USD": 8,
+        "XRP/USD": 7,
+        "BNB/USD": 15,
+        "SOL/USD": 3
+      },
+      "coverage_by_pair": {
+        "BTC/USD": 1.0,
+        "ETH/USD": 1.0,
+        "XRP/USD": 1.0,
+        "BNB/USD": 1.0,
+        "SOL/USD": 1.0
+      },
+      "gross": {
+        "mean_return": -0.010323687436737738,
+        "median_return": -0.010717303330813333,
+        "mean_basket_advantage": 0.0010358241197806818,
+        "win_fraction": 0.3939393939393939,
+        "worst_isolated_return": -0.10833835359155186
+      },
+      "base": {
+        "mean_return": -0.013288268021260223,
+        "median_return": -0.013680704836861013,
+        "mean_basket_advantage": 0.0010327213031976268,
+        "win_fraction": 0.36363636363636365,
+        "worst_isolated_return": -0.11100933072958141
+      },
+      "stress": {
+        "mean_return": -0.015259721510318876,
+        "median_return": -0.015651374235790327,
+        "mean_basket_advantage": 0.0010306579224244733,
+        "win_fraction": 0.3333333333333333,
+        "worst_isolated_return": -0.11278553719381301
+      }
+    },
+    "2025-02_01_14": {
+      "scheduled_asset_observations": 65,
+      "feature_coverage": 1.0,
+      "selected_observations": 15,
+      "opportunity_dates_utc": 8,
+      "selected_by_pair": {
+        "BTC/USD": 0,
+        "ETH/USD": 2,
+        "XRP/USD": 4,
+        "BNB/USD": 7,
+        "SOL/USD": 2
+      },
+      "coverage_by_pair": {
+        "BTC/USD": 1.0,
+        "ETH/USD": 1.0,
+        "XRP/USD": 1.0,
+        "BNB/USD": 1.0,
+        "SOL/USD": 1.0
+      },
+      "gross": {
+        "mean_return": 0.00121722981570583,
+        "median_return": 0.0021849609944000203,
+        "mean_basket_advantage": 0.006493377419487493,
+        "win_fraction": 0.5333333333333333,
+        "worst_isolated_return": -0.05216234763966732
+      },
+      "base": {
+        "mean_return": -0.0017819216469712703,
+        "median_return": -0.0008170893120977851,
+        "mean_basket_advantage": 0.006473926473373714,
+        "win_fraction": 0.4666666666666667,
+        "worst_isolated_return": -0.05500160029813417
+      },
+      "stress": {
+        "mean_return": -0.003776364856300507,
+        "median_return": -0.0028134602598044456,
+        "mean_basket_advantage": 0.0064609915456535025,
+        "win_fraction": 0.4666666666666667,
+        "worst_isolated_return": -0.056889710403515203
+      }
+    },
+    "2025-02_15_28": {
+      "scheduled_asset_observations": 65,
+      "feature_coverage": 1.0,
+      "selected_observations": 17,
+      "opportunity_dates_utc": 8,
+      "selected_by_pair": {
+        "BTC/USD": 0,
+        "ETH/USD": 6,
+        "XRP/USD": 3,
+        "BNB/USD": 7,
+        "SOL/USD": 1
+      },
+      "coverage_by_pair": {
+        "BTC/USD": 1.0,
+        "ETH/USD": 1.0,
+        "XRP/USD": 1.0,
+        "BNB/USD": 1.0,
+        "SOL/USD": 1.0
+      },
+      "gross": {
+        "mean_return": -0.020515944062876282,
+        "median_return": -0.017585239147309917,
+        "mean_basket_advantage": -0.0016985405403962292,
+        "win_fraction": 0.29411764705882354,
+        "worst_isolated_return": -0.10833835359155186
+      },
+      "base": {
+        "mean_return": -0.02344999368922313,
+        "median_return": -0.020528067715601006,
+        "mean_basket_advantage": -0.0016934525532996958,
+        "win_fraction": 0.29411764705882354,
+        "worst_isolated_return": -0.11100933072958141
+      },
+      "stress": {
+        "mean_return": -0.025401144014881888,
+        "median_return": -0.022485056059567188,
+        "mean_basket_advantage": -0.0016900690291795754,
+        "win_fraction": 0.23529411764705882,
+        "worst_isolated_return": -0.11278553719381301
+      }
+    },
+    "2025-03": {
+      "scheduled_asset_observations": 150,
+      "feature_coverage": 1.0,
+      "selected_observations": 48,
+      "opportunity_dates_utc": 21,
+      "selected_by_pair": {
+        "BTC/USD": 5,
+        "ETH/USD": 6,
+        "XRP/USD": 7,
+        "BNB/USD": 19,
+        "SOL/USD": 11
+      },
+      "coverage_by_pair": {
+        "BTC/USD": 1.0,
+        "ETH/USD": 1.0,
+        "XRP/USD": 1.0,
+        "BNB/USD": 1.0,
+        "SOL/USD": 1.0
+      },
+      "gross": {
+        "mean_return": -0.02385067744932641,
+        "median_return": -0.015791214629287287,
+        "mean_basket_advantage": -0.003012788459200982,
+        "win_fraction": 0.2708333333333333,
+        "worst_isolated_return": -0.19419680881267398
+      },
+      "base": {
+        "mean_return": -0.02677473786432552,
+        "median_return": -0.018739417207430664,
+        "mean_basket_advantage": -0.003003763635571237,
+        "win_fraction": 0.2708333333333333,
+        "worst_isolated_return": -0.19661059649781443
+      },
+      "stress": {
+        "mean_return": -0.028719245339502385,
+        "median_return": -0.02069997928136358,
+        "mean_basket_advantage": -0.0029977621053291856,
+        "win_fraction": 0.25,
+        "worst_isolated_return": -0.1982157713338637
+      }
+    },
+    "2025-03_01_14": {
+      "scheduled_asset_observations": 65,
+      "feature_coverage": 1.0,
+      "selected_observations": 20,
+      "opportunity_dates_utc": 6,
+      "selected_by_pair": {
+        "BTC/USD": 3,
+        "ETH/USD": 3,
+        "XRP/USD": 3,
+        "BNB/USD": 6,
+        "SOL/USD": 5
+      },
+      "coverage_by_pair": {
+        "BTC/USD": 1.0,
+        "ETH/USD": 1.0,
+        "XRP/USD": 1.0,
+        "BNB/USD": 1.0,
+        "SOL/USD": 1.0
+      },
+      "gross": {
+        "mean_return": -0.045343894766375306,
+        "median_return": -0.03223592086172955,
+        "mean_basket_advantage": 0.0010844114917433986,
+        "win_fraction": 0.15,
+        "worst_isolated_return": -0.19419680881267398
+      },
+      "base": {
+        "mean_return": -0.04820357213618262,
+        "median_return": -0.03513486323611148,
+        "mean_basket_advantage": 0.0010811631314328095,
+        "win_fraction": 0.15,
+        "worst_isolated_return": -0.19661059649781443
+      },
+      "stress": {
+        "mean_return": -0.050105264725590334,
+        "median_return": -0.037062667151576745,
+        "mean_basket_advantage": 0.0010790029637175438,
+        "win_fraction": 0.15,
+        "worst_isolated_return": -0.1982157713338637
+      }
+    },
+    "2025-03_15_28": {
+      "scheduled_asset_observations": 65,
+      "feature_coverage": 1.0,
+      "selected_observations": 24,
+      "opportunity_dates_utc": 12,
+      "selected_by_pair": {
+        "BTC/USD": 2,
+        "ETH/USD": 3,
+        "XRP/USD": 4,
+        "BNB/USD": 10,
+        "SOL/USD": 5
+      },
+      "coverage_by_pair": {
+        "BTC/USD": 1.0,
+        "ETH/USD": 1.0,
+        "XRP/USD": 1.0,
+        "BNB/USD": 1.0,
+        "SOL/USD": 1.0
+      },
+      "gross": {
+        "mean_return": -0.005848116675000667,
+        "median_return": -0.006314864925916042,
+        "mean_basket_advantage": -0.006124437767820297,
+        "win_fraction": 0.375,
+        "worst_isolated_return": -0.07027861501139454
+      },
+      "base": {
+        "mean_return": -0.00882610385521152,
+        "median_return": -0.009291453959293428,
+        "mean_basket_advantage": -0.0061060919823679,
+        "win_fraction": 0.375,
+        "worst_isolated_return": -0.07306360029594083
+      },
+      "stress": {
+        "mean_return": -0.010806472763869238,
+        "median_return": -0.011270893096816892,
+        "mean_basket_advantage": -0.006093891989246297,
+        "win_fraction": 0.3333333333333333,
+        "worst_isolated_return": -0.0749156224621993
+      }
+    }
+  },
+  "uncertainty": {
+    "calendar_days": 90,
+    "block_days": 7,
+    "repetitions": 2000,
+    "seed": 20261002,
+    "valid_replicates": 2000,
+    "stress_mean_interval": [
+      -0.02634175935752181,
+      -0.0020275504505413884
+    ],
+    "stress_advantage_interval": [
+      -0.004003525342537594,
+      0.0006146232045952133
+    ]
+  },
+  "verdict": {
+    "gates": {
+      "feature_coverage_at_least_99_percent": true,
+      "enough_observations_dates_and_assets": true,
+      "stress_profit_and_relative_advantage_with_positive_lower_bounds": false,
+      "two_positive_stress_months": false,
+      "four_windows_with_eight_opportunity_dates": true
+    },
+    "signal_passed_feasibility": false,
+    "portfolio_candidate_implemented": false,
+    "strategy_approved_for_live": false,
+    "qualification_verified": false,
+    "validation_data_opened": false,
+    "long_only_research": true
+  }
+}

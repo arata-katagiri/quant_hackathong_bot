@@ -1,0 +1,245 @@
+{
+  "created_at": "2026-10-02T01:41:22.660356+00:00",
+  "plan_sha256": "3c6dfc3505108d75e80984ca4f22496e61cc48883a8ec0ada4871a3280196023",
+  "screening_spot_data_previously_inspected": true,
+  "inputs": [
+    {
+      "kind": "spot",
+      "file": "BTCUSDT-5m-2024-12.zip",
+      "sha256": "0a2f70744f9244a066ab4ced934a725d85b247e917cfe22ada218435c1573301"
+    },
+    {
+      "kind": "spot",
+      "file": "BTCUSDT-5m-2025-01.zip",
+      "sha256": "4ed2edba26630a98b6ac6102b41dad00e1542640336f0d571c5a7394b39df983"
+    },
+    {
+      "kind": "spot",
+      "file": "BTCUSDT-5m-2025-02.zip",
+      "sha256": "a4859a5b4ad31f41f3ffad1d9a044154ff529c41983b76432ef3f10981b32415"
+    },
+    {
+      "kind": "spot",
+      "file": "BTCUSDT-5m-2025-03.zip",
+      "sha256": "1eb1fb0c76a0e8302abdec42d54b844bd3c3d6d7e6e69ae434aaa1dea445d54d"
+    },
+    {
+      "kind": "funding",
+      "file": "BTCUSDT-fundingRate-2024-12.zip",
+      "sha256": "069409f525ebf6370ee1c7defe475167de4b97284c5ac8e68768652968cd3dc9"
+    },
+    {
+      "kind": "funding",
+      "file": "BTCUSDT-fundingRate-2025-01.zip",
+      "sha256": "df725010d55458866eb5a47e9ee708c6796c9d7e77b14c38342cea11f381815e"
+    },
+    {
+      "kind": "funding",
+      "file": "BTCUSDT-fundingRate-2025-02.zip",
+      "sha256": "e918b90fb33df3a3317feea13807a892047f1ec86eeac100bdb7b3dd83285d46"
+    },
+    {
+      "kind": "funding",
+      "file": "BTCUSDT-fundingRate-2025-03.zip",
+      "sha256": "a3b95cfb315641fbfddc61eb32adf2a2588afb7a3973a61f464aca007ad43e3f"
+    },
+    {
+      "kind": "spot",
+      "file": "ETHUSDT-5m-2024-12.zip",
+      "sha256": "f02545d5f40476d577c86560ef93d69aa0ac75c03c92eacec3950abb3d4b5c0d"
+    },
+    {
+      "kind": "spot",
+      "file": "ETHUSDT-5m-2025-01.zip",
+      "sha256": "356e860d31d3bf5cc7e26c1601716052acaee1352bf7cf01492d4da7b2bdaeb6"
+    },
+    {
+      "kind": "spot",
+      "file": "ETHUSDT-5m-2025-02.zip",
+      "sha256": "c68b0d0e7c09715d072e4bb2fa0645db45fbe7fb864c4f5931856be1a9902e18"
+    },
+    {
+      "kind": "spot",
+      "file": "ETHUSDT-5m-2025-03.zip",
+      "sha256": "21d758ceba0dbb473adfa418dbd5e02b4b9a4acce9979e8b1d210a3d79866989"
+    },
+    {
+      "kind": "funding",
+      "file": "ETHUSDT-fundingRate-2024-12.zip",
+      "sha256": "11a0847e8aacb32eeb725611fda4fe6a8419c03eb0c16e14dfc3b9287e78ecc9"
+    },
+    {
+      "kind": "funding",
+      "file": "ETHUSDT-fundingRate-2025-01.zip",
+      "sha256": "88c95b99d2784a7baac529fe578563d7e05038a1b8a498b2f59bf81b216fee20"
+    },
+    {
+      "kind": "funding",
+      "file": "ETHUSDT-fundingRate-2025-02.zip",
+      "sha256": "9e116dd6754484a19ecc41ced40b8dfa7f62c33d41cdc3317336b1e1f043767f"
+    },
+    {
+      "kind": "funding",
+      "file": "ETHUSDT-fundingRate-2025-03.zip",
+      "sha256": "62464a8bfb7ba515628acb76d3e2172d33b88805faa2e701a22537c51a17d139"
+    },
+    {
+      "kind": "spot",
+      "file": "XRPUSDT-5m-2024-12.zip",
+      "sha256": "358832c4a1d64aaee3974713c8e91d78b11724e53e39ed58239d7802c538215a"
+    },
+    {
+      "kind": "spot",
+      "file": "XRPUSDT-5m-2025-01.zip",
+      "sha256": "2b65b80f5b8f655af6321f72c36893cdb0eb18a75b19a5c1550a6fa1ba653502"
+    },
+    {
+      "kind": "spot",
+      "file": "XRPUSDT-5m-2025-02.zip",
+      "sha256": "7439b49585005e773a0e5aa8520dd593b8c7adc3d5d27e5a9b146669cad565e5"
+    },
+    {
+      "kind": "spot",
+      "file": "XRPUSDT-5m-2025-03.zip",
+      "sha256": "8b541262cf5065e688dddf9a343534d03a90b9b7bd920b30ddc7fcabb9e88ffd"
+    },
+    {
+      "kind": "funding",
+      "file": "XRPUSDT-fundingRate-2024-12.zip",
+      "sha256": "be526ba15c6c4c3ae8cddda1411a13f665f635be444c992efd2f66e6bbfa37d8"
+    },
+    {
+      "kind": "funding",
+      "file": "XRPUSDT-fundingRate-2025-01.zip",
+      "sha256": "b14759b7a99d6111f819790de938b2b0f3eeeaac57402c2e1ef71fd38302d26d"
+    },
+    {
+      "kind": "funding",
+      "file": "XRPUSDT-fundingRate-2025-02.zip",
+      "sha256": "927da57e3d0a92fa6e024c00397abac93ab5722ca7a353e92e493cfd28de2f3c"
+    },
+    {
+      "kind": "funding",
+      "file": "XRPUSDT-fundingRate-2025-03.zip",
+      "sha256": "690fb0f227c2b8b1467428b2e3340ea9928d8ef81ac461bd6f641f100dd21d66"
+    },
+    {
+      "kind": "spot",
+      "file": "BNBUSDT-5m-2024-12.zip",
+      "sha256": "a4bdd5ff2298a5a532abc6231c7dc98e99bc38035f4a42e216f4590a7918baed"
+    },
+    {
+      "kind": "spot",
+      "file": "BNBUSDT-5m-2025-01.zip",
+      "sha256": "a2345d3d6dc196fe6d13d8580fa918dc46e9e63a057ae17361e6f1ce0afb1eea"
+    },
+    {
+      "kind": "spot",
+      "file": "BNBUSDT-5m-2025-02.zip",
+      "sha256": "302bfeffc24572350b8c92909b66eb65e2d4ce8425e2c78219b7cbe00194a508"
+    },
+    {
+      "kind": "spot",
+      "file": "BNBUSDT-5m-2025-03.zip",
+      "sha256": "efc9792d956c88c591409e4dc199cca074ac19831a8513c1fd92aa46615c2f2c"
+    },
+    {
+      "kind": "funding",
+      "file": "BNBUSDT-fundingRate-2024-12.zip",
+      "sha256": "9bad523573121ac9a255adac4574e4ea8545ab77807d6ccd8ac132771b6f0c7b"
+    },
+    {
+      "kind": "funding",
+      "file": "BNBUSDT-fundingRate-2025-01.zip",
+      "sha256": "74544eee335ba817f34c28bad187eabc9c19b730a84e875eb636499944198479"
+    },
+    {
+      "kind": "funding",
+      "file": "BNBUSDT-fundingRate-2025-02.zip",
+      "sha256": "b5094d4dfe17e0b07b4a4cfeca6baef32a96711b824ea45e1c9bcf80db0d2b06"
+    },
+    {
+      "kind": "funding",
+      "file": "BNBUSDT-fundingRate-2025-03.zip",
+      "sha256": "8bd05f64e15a3f1731d75ad21dea232b6ae9e93cff351a0699a4c1ab0dc0d2ea"
+    },
+    {
+      "kind": "spot",
+      "file": "SOLUSDT-5m-2024-12.zip",
+      "sha256": "2ba22d7d765686ad70b9a3c2a7be9fde4d269ad1b0c1a5fcbf7ef99cc839128b"
+    },
+    {
+      "kind": "spot",
+      "file": "SOLUSDT-5m-2025-01.zip",
+      "sha256": "5239b0db75b3ca28588e41f45be24360ca648820d654f270869e4679fbc57fd0"
+    },
+    {
+      "kind": "spot",
+      "file": "SOLUSDT-5m-2025-02.zip",
+      "sha256": "fc42b66d261f05b5c35ecfe66cf8ad7b42b349da555bd6c16b074227451fc51e"
+    },
+    {
+      "kind": "spot",
+      "file": "SOLUSDT-5m-2025-03.zip",
+      "sha256": "141acebb46fd7a30c6d47f1b251e5da88e37e54facc2b028ac5d5cfff4525cd3"
+    },
+    {
+      "kind": "funding",
+      "file": "SOLUSDT-fundingRate-2024-12.zip",
+      "sha256": "bae83020ac2ccfa6dd8d1362d373a92b4d5a7e396cef52e78dc2e7d81e63f621"
+    },
+    {
+      "kind": "funding",
+      "file": "SOLUSDT-fundingRate-2025-01.zip",
+      "sha256": "314888152c16bc2d846f9aaa9ea3ebeec7c67d235ef2671f1a5e6fe0a8b4dbf2"
+    },
+    {
+      "kind": "funding",
+      "file": "SOLUSDT-fundingRate-2025-02.zip",
+      "sha256": "eeade74c1ca2a6dc9d78ba0d7a1ff145c323be72cfa2c09fcef9edab88baef9f"
+    },
+    {
+      "kind": "funding",
+      "file": "SOLUSDT-fundingRate-2025-03.zip",
+      "sha256": "3f77a33779c946da6f3082d14fb9a5497e7e4a4e3fff4d68967e6ddf96cf99ea"
+    }
+  ],
+  "signal": "last_funding_rate < 0",
+  "lag_seconds": 300,
+  "horizon_seconds": 28800,
+  "funding_records": {
+    "BTC/USD": 363,
+    "ETH/USD": 363,
+    "XRP/USD": 363,
+    "BNB/USD": 363,
+    "SOL/USD": 363
+  },
+  "source_sha256": {
+    "src/roostoo_bot/__init__.py": "6dfee1f11a69875b6246e031ce826fc111fc08192539af8ee4b3ff9a2de916f4",
+    "src/roostoo_bot/attribution.py": "44f91f779072d4cceb1e3c67bcd747756f905477436ad77ab56c5a91f6a1c763",
+    "src/roostoo_bot/backtest.py": "d4bdab2a6ce402f89f2e049e8c8f7cd15cdaf53d2a3a090b6c309b47c5957569",
+    "src/roostoo_bot/basket_research.py": "c61b94b5933030f2d326c68a21c3c83cd3bd98adb420d864427252ed722b5e53",
+    "src/roostoo_bot/client.py": "f96265d4cbabec1d73e880875bb3d805845e2d202815b7da229c9948f74a82a5",
+    "src/roostoo_bot/config.py": "7324da98ed89307c1bb8f21c26eefdae79147561015efc9e40fdfdecc651b663",
+    "src/roostoo_bot/download_data.py": "d0cbb09aa6cb381423f9ceb6887a6327bafe48dc869be74aa30b6e695bf33f90",
+    "src/roostoo_bot/engine.py": "f5d9568ad6132ed23a213637f419adb1d04f8282114005050cb614bf7cc2e6c9",
+    "src/roostoo_bot/execution_probe.py": "cd13861b1f50661145e3a4029386b9199f5be02b78b3fada27f92fcec682b42a",
+    "src/roostoo_bot/funding_data.py": "a26669be8c28a43ec9dc3ad0d6f8a7bb8a85198f2cd059fe9fc95ef54268febf",
+    "src/roostoo_bot/funding_research.py": "5b42d564d0937535684b4628fce1ca9432ad274a0d6252d84a5d5a76a23d5053",
+    "src/roostoo_bot/logging_utils.py": "d17be967bfca0efc1e4417661cd5c8225247ae0eeb3dd7c54cd170f6fb005fb5",
+    "src/roostoo_bot/main.py": "0021c5f2754999e4469148a2044f78ac1e8a4a337702e960c69b83f5b58e7318",
+    "src/roostoo_bot/market_data.py": "7fcca5823a777a7808559beddc037acee8ba6e06f3bc9c8201f93e28073ab11e",
+    "src/roostoo_bot/news.py": "1eb10a3e4095b0aefc89b159c93f386b62380d8a67a845ea03257e0a3bb9ab5f",
+    "src/roostoo_bot/portfolio.py": "d26ef63b1cff5c68c3272aea79c32c400a1796c9feba947fb0d64267f4b7bd5b",
+    "src/roostoo_bot/portfolio_backtest.py": "be63e4c180f2844ec1f71d080399ac976988aec6803ed8e47fa823ccdabee649",
+    "src/roostoo_bot/preflight.py": "6fa89aa3a19cf0fecbe6f5cf8c50eb6005a26c40030036fde2c88cc37906c681",
+    "src/roostoo_bot/pullback_research.py": "983ad55fbe7325fcf0febbd79267e58d39e4bd312ff7273c818177b4738bc3e6",
+    "src/roostoo_bot/relative_research.py": "65fb156f5cc014fe61b8b220ad568174a1e8a327aa69d5f444b4a4a6bd2b2268",
+    "src/roostoo_bot/relative_strength.py": "07a9934a115238cf0bb80bb57a5e7d56cbc96df2be808c71fa0317c47e7e53f5",
+    "src/roostoo_bot/research.py": "c9675e99df1b2bab535fefc93ba973c6dfdbddd90464d87de9995478c010ebcc",
+    "src/roostoo_bot/state.py": "2691da176be604a3c7c2cfc5cb6f4eb34b4d85e0f7b0eb8a71325ce95f8288b0",
+    "src/roostoo_bot/strategy.py": "dd9fb8c65e72b118e20f051371983dbdc92332eea457e231e5898e3afa3a35e8",
+    "src/roostoo_bot/vol_momentum.py": "3ebcb4451d61fe97fe51b2a5b6d55742b04a85cf000d158e51d5aadc7f3918cf",
+    "src/roostoo_bot/vol_research.py": "166615ebd442d6ac694e741be9c7474db74743040ef19d2d7be9ee4ee9a37dba"
+  }
+}

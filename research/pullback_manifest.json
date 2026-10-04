@@ -1,0 +1,77 @@
+{
+  "created_at": "2026-10-01T04:57:30.377607+00:00",
+  "inputs": [
+    {
+      "file": "BTCUSDT-5m-2025-12.zip",
+      "sha256": "5f1f3ad19c8f79fe1f5f8e009bf55fcef306c60990a18d0a75d3b568628c2083"
+    },
+    {
+      "file": "BTCUSDT-5m-2026-01.zip",
+      "sha256": "0b95c0dd7a22e374604527581a896930058e6d5426e55d34c9ec3e118a6b979e"
+    },
+    {
+      "file": "BTCUSDT-5m-2026-02.zip",
+      "sha256": "329314be85423f40b4ddcc77bde1c78c71bd8a7ff5915f342bf972b949e71e34"
+    },
+    {
+      "file": "ETHUSDT-5m-2025-12.zip",
+      "sha256": "fc28fa37b6e1be77e0a71e6a5759843a9023b9e4c54f0cce89c3bf491451db91"
+    },
+    {
+      "file": "ETHUSDT-5m-2026-01.zip",
+      "sha256": "f2d482d2611be21f38d0d835b0a5628bc3d5787a10876dd36908529ed19fdb41"
+    },
+    {
+      "file": "ETHUSDT-5m-2026-02.zip",
+      "sha256": "1f583084182d61558324da9e1fc9ee86ab3d76038391197ddc3d7a05bcdae96e"
+    }
+  ],
+  "plan_sha256": "66f9ca2dcf70d3e1675c63ae1977b17a65934bbb523641868ef15e9e843eb79a",
+  "simulation_version": "boundary-decisions-v3",
+  "source_sha256": {
+    "src/roostoo_bot/__init__.py": "6dfee1f11a69875b6246e031ce826fc111fc08192539af8ee4b3ff9a2de916f4",
+    "src/roostoo_bot/backtest.py": "d4bdab2a6ce402f89f2e049e8c8f7cd15cdaf53d2a3a090b6c309b47c5957569",
+    "src/roostoo_bot/client.py": "4f17c7f58c87138f76ec55ffd8394f3d31a0dacba1e391b1ad421eeaabcc8beb",
+    "src/roostoo_bot/config.py": "96434d4d49a20a2bcd3793021f9cb3f950b3b9a819c94fb1a5864be9245b0142",
+    "src/roostoo_bot/download_data.py": "899af4a6be95543f590a03f4ae55cf441ac14bcf04a81bd84024be4a69a5f273",
+    "src/roostoo_bot/engine.py": "2e71aba33a26560e56491af8015fc17fa9376790c4e4d3aa1c4846bc2557de65",
+    "src/roostoo_bot/logging_utils.py": "d17be967bfca0efc1e4417661cd5c8225247ae0eeb3dd7c54cd170f6fb005fb5",
+    "src/roostoo_bot/main.py": "0021c5f2754999e4469148a2044f78ac1e8a4a337702e960c69b83f5b58e7318",
+    "src/roostoo_bot/market_data.py": "7fcca5823a777a7808559beddc037acee8ba6e06f3bc9c8201f93e28073ab11e",
+    "src/roostoo_bot/news.py": "1eb10a3e4095b0aefc89b159c93f386b62380d8a67a845ea03257e0a3bb9ab5f",
+    "src/roostoo_bot/portfolio.py": "0208a789e03462f6a2f467d3a49daa2508f474121c0d432922a3d142440cd898",
+    "src/roostoo_bot/portfolio_backtest.py": "61bf40f66eccf9d5dc17515f9fec8d72fc950ede8b41cda2d76662ace47a7569",
+    "src/roostoo_bot/preflight.py": "6a4bb01cf25a7cba5ea6d46bc15d1dd00c00f8eeb2dac99459581f338e47a5f3",
+    "src/roostoo_bot/pullback_research.py": "983ad55fbe7325fcf0febbd79267e58d39e4bd312ff7273c818177b4738bc3e6",
+    "src/roostoo_bot/research.py": "c9675e99df1b2bab535fefc93ba973c6dfdbddd90464d87de9995478c010ebcc",
+    "src/roostoo_bot/state.py": "2691da176be604a3c7c2cfc5cb6f4eb34b4d85e0f7b0eb8a71325ce95f8288b0",
+    "src/roostoo_bot/strategy.py": "dd9fb8c65e72b118e20f051371983dbdc92332eea457e231e5898e3afa3a35e8"
+  },
+  "settings": {
+    "dry_run": true,
+    "pairs": [
+      "BTC/USD",
+      "ETH/USD"
+    ],
+    "poll_seconds": 300,
+    "fast_window": 144,
+    "slow_window": 576,
+    "max_asset_weight": 0.35,
+    "rebalance_band": 0.05,
+    "min_trade_usd": 250,
+    "max_daily_loss": 0.03,
+    "max_drawdown": 0.08,
+    "credential_set": "testing",
+    "strategy": "pullback",
+    "decision_every_bars": 3,
+    "signal_buffer": 0.005,
+    "fee_rate": 0.001,
+    "slippage_rate": 0.0005,
+    "cash_reserve": 0.01,
+    "max_spread": 0.005,
+    "max_quote_age_seconds": 30,
+    "max_sample_lag_seconds": 30,
+    "live_trading_enabled": false,
+    "signal_source": "binance"
+  }
+}

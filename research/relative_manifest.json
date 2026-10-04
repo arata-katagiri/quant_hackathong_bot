@@ -1,0 +1,171 @@
+{
+  "created_at": "2026-10-02T01:25:08.782758+00:00",
+  "stage": "screen",
+  "plan_sha256": "48cc699b0d4446c7780cae0fe5c154458b07222600b0961623764b58ece23cfa",
+  "inputs": [
+    {
+      "file": "BTCUSDT-5m-2024-12.zip",
+      "sha256": "0a2f70744f9244a066ab4ced934a725d85b247e917cfe22ada218435c1573301"
+    },
+    {
+      "file": "BTCUSDT-5m-2025-01.zip",
+      "sha256": "4ed2edba26630a98b6ac6102b41dad00e1542640336f0d571c5a7394b39df983"
+    },
+    {
+      "file": "BTCUSDT-5m-2025-02.zip",
+      "sha256": "a4859a5b4ad31f41f3ffad1d9a044154ff529c41983b76432ef3f10981b32415"
+    },
+    {
+      "file": "BTCUSDT-5m-2025-03.zip",
+      "sha256": "1eb1fb0c76a0e8302abdec42d54b844bd3c3d6d7e6e69ae434aaa1dea445d54d"
+    },
+    {
+      "file": "ETHUSDT-5m-2024-12.zip",
+      "sha256": "f02545d5f40476d577c86560ef93d69aa0ac75c03c92eacec3950abb3d4b5c0d"
+    },
+    {
+      "file": "ETHUSDT-5m-2025-01.zip",
+      "sha256": "356e860d31d3bf5cc7e26c1601716052acaee1352bf7cf01492d4da7b2bdaeb6"
+    },
+    {
+      "file": "ETHUSDT-5m-2025-02.zip",
+      "sha256": "c68b0d0e7c09715d072e4bb2fa0645db45fbe7fb864c4f5931856be1a9902e18"
+    },
+    {
+      "file": "ETHUSDT-5m-2025-03.zip",
+      "sha256": "21d758ceba0dbb473adfa418dbd5e02b4b9a4acce9979e8b1d210a3d79866989"
+    },
+    {
+      "file": "XRPUSDT-5m-2024-12.zip",
+      "sha256": "358832c4a1d64aaee3974713c8e91d78b11724e53e39ed58239d7802c538215a"
+    },
+    {
+      "file": "XRPUSDT-5m-2025-01.zip",
+      "sha256": "2b65b80f5b8f655af6321f72c36893cdb0eb18a75b19a5c1550a6fa1ba653502"
+    },
+    {
+      "file": "XRPUSDT-5m-2025-02.zip",
+      "sha256": "7439b49585005e773a0e5aa8520dd593b8c7adc3d5d27e5a9b146669cad565e5"
+    },
+    {
+      "file": "XRPUSDT-5m-2025-03.zip",
+      "sha256": "8b541262cf5065e688dddf9a343534d03a90b9b7bd920b30ddc7fcabb9e88ffd"
+    },
+    {
+      "file": "BNBUSDT-5m-2024-12.zip",
+      "sha256": "a4bdd5ff2298a5a532abc6231c7dc98e99bc38035f4a42e216f4590a7918baed"
+    },
+    {
+      "file": "BNBUSDT-5m-2025-01.zip",
+      "sha256": "a2345d3d6dc196fe6d13d8580fa918dc46e9e63a057ae17361e6f1ce0afb1eea"
+    },
+    {
+      "file": "BNBUSDT-5m-2025-02.zip",
+      "sha256": "302bfeffc24572350b8c92909b66eb65e2d4ce8425e2c78219b7cbe00194a508"
+    },
+    {
+      "file": "BNBUSDT-5m-2025-03.zip",
+      "sha256": "efc9792d956c88c591409e4dc199cca074ac19831a8513c1fd92aa46615c2f2c"
+    },
+    {
+      "file": "SOLUSDT-5m-2024-12.zip",
+      "sha256": "2ba22d7d765686ad70b9a3c2a7be9fde4d269ad1b0c1a5fcbf7ef99cc839128b"
+    },
+    {
+      "file": "SOLUSDT-5m-2025-01.zip",
+      "sha256": "5239b0db75b3ca28588e41f45be24360ca648820d654f270869e4679fbc57fd0"
+    },
+    {
+      "file": "SOLUSDT-5m-2025-02.zip",
+      "sha256": "fc42b66d261f05b5c35ecfe66cf8ad7b42b349da555bd6c16b074227451fc51e"
+    },
+    {
+      "file": "SOLUSDT-5m-2025-03.zip",
+      "sha256": "141acebb46fd7a30c6d47f1b251e5da88e37e54facc2b028ac5d5cfff4525cd3"
+    }
+  ],
+  "screening_data_previously_inspected": true,
+  "settings": {
+    "dry_run": true,
+    "pairs": [
+      "BTC/USD",
+      "ETH/USD",
+      "XRP/USD",
+      "BNB/USD",
+      "SOL/USD"
+    ],
+    "poll_seconds": 300,
+    "fast_window": 288,
+    "slow_window": 2016,
+    "max_asset_weight": 0.14,
+    "rebalance_band": 0.05,
+    "min_trade_usd": 250.0,
+    "max_daily_loss": 0.03,
+    "max_drawdown": 0.08,
+    "credential_set": "testing",
+    "strategy": "relative_strength",
+    "decision_every_bars": 288,
+    "signal_buffer": 0.005,
+    "fee_rate": 0.001,
+    "slippage_rate": 0.0005,
+    "cash_reserve": 0.01,
+    "max_spread": 0.005,
+    "max_quote_age_seconds": 30,
+    "max_sample_lag_seconds": 30,
+    "live_trading_enabled": false,
+    "signal_source": "offline"
+  },
+  "rules": {
+    "BTC/USD": {
+      "amount_precision": 5,
+      "min_notional": 1.0,
+      "can_trade": true
+    },
+    "ETH/USD": {
+      "amount_precision": 4,
+      "min_notional": 1.0,
+      "can_trade": true
+    },
+    "XRP/USD": {
+      "amount_precision": 1,
+      "min_notional": 1.0,
+      "can_trade": true
+    },
+    "BNB/USD": {
+      "amount_precision": 3,
+      "min_notional": 1.0,
+      "can_trade": true
+    },
+    "SOL/USD": {
+      "amount_precision": 3,
+      "min_notional": 1.0,
+      "can_trade": true
+    }
+  },
+  "source_sha256": {
+    "src/roostoo_bot/__init__.py": "6dfee1f11a69875b6246e031ce826fc111fc08192539af8ee4b3ff9a2de916f4",
+    "src/roostoo_bot/attribution.py": "44f91f779072d4cceb1e3c67bcd747756f905477436ad77ab56c5a91f6a1c763",
+    "src/roostoo_bot/backtest.py": "d4bdab2a6ce402f89f2e049e8c8f7cd15cdaf53d2a3a090b6c309b47c5957569",
+    "src/roostoo_bot/basket_research.py": "c61b94b5933030f2d326c68a21c3c83cd3bd98adb420d864427252ed722b5e53",
+    "src/roostoo_bot/client.py": "f96265d4cbabec1d73e880875bb3d805845e2d202815b7da229c9948f74a82a5",
+    "src/roostoo_bot/config.py": "7324da98ed89307c1bb8f21c26eefdae79147561015efc9e40fdfdecc651b663",
+    "src/roostoo_bot/download_data.py": "d0cbb09aa6cb381423f9ceb6887a6327bafe48dc869be74aa30b6e695bf33f90",
+    "src/roostoo_bot/engine.py": "f5d9568ad6132ed23a213637f419adb1d04f8282114005050cb614bf7cc2e6c9",
+    "src/roostoo_bot/execution_probe.py": "cd13861b1f50661145e3a4029386b9199f5be02b78b3fada27f92fcec682b42a",
+    "src/roostoo_bot/logging_utils.py": "d17be967bfca0efc1e4417661cd5c8225247ae0eeb3dd7c54cd170f6fb005fb5",
+    "src/roostoo_bot/main.py": "0021c5f2754999e4469148a2044f78ac1e8a4a337702e960c69b83f5b58e7318",
+    "src/roostoo_bot/market_data.py": "7fcca5823a777a7808559beddc037acee8ba6e06f3bc9c8201f93e28073ab11e",
+    "src/roostoo_bot/news.py": "1eb10a3e4095b0aefc89b159c93f386b62380d8a67a845ea03257e0a3bb9ab5f",
+    "src/roostoo_bot/portfolio.py": "d26ef63b1cff5c68c3272aea79c32c400a1796c9feba947fb0d64267f4b7bd5b",
+    "src/roostoo_bot/portfolio_backtest.py": "be63e4c180f2844ec1f71d080399ac976988aec6803ed8e47fa823ccdabee649",
+    "src/roostoo_bot/preflight.py": "6fa89aa3a19cf0fecbe6f5cf8c50eb6005a26c40030036fde2c88cc37906c681",
+    "src/roostoo_bot/pullback_research.py": "983ad55fbe7325fcf0febbd79267e58d39e4bd312ff7273c818177b4738bc3e6",
+    "src/roostoo_bot/relative_research.py": "65fb156f5cc014fe61b8b220ad568174a1e8a327aa69d5f444b4a4a6bd2b2268",
+    "src/roostoo_bot/relative_strength.py": "07a9934a115238cf0bb80bb57a5e7d56cbc96df2be808c71fa0317c47e7e53f5",
+    "src/roostoo_bot/research.py": "c9675e99df1b2bab535fefc93ba973c6dfdbddd90464d87de9995478c010ebcc",
+    "src/roostoo_bot/state.py": "2691da176be604a3c7c2cfc5cb6f4eb34b4d85e0f7b0eb8a71325ce95f8288b0",
+    "src/roostoo_bot/strategy.py": "dd9fb8c65e72b118e20f051371983dbdc92332eea457e231e5898e3afa3a35e8",
+    "src/roostoo_bot/vol_momentum.py": "3ebcb4451d61fe97fe51b2a5b6d55742b04a85cf000d158e51d5aadc7f3918cf",
+    "src/roostoo_bot/vol_research.py": "166615ebd442d6ac694e741be9c7474db74743040ef19d2d7be9ee4ee9a37dba"
+  }
+}

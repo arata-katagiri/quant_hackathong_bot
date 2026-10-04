@@ -1,0 +1,90 @@
+{
+  "scheduled_trials": 78,
+  "usable_trials": 77,
+  "excluded_trials": 1,
+  "costs": {
+    "base": {
+      "mean_return": -0.009407640582943686,
+      "median_return": -0.009440147381212682,
+      "control_mean_return": -0.010315008389565734,
+      "mean_turnover": 4.998889611782153,
+      "worst_drawdown": 0.08592622315390819,
+      "year_means": {
+        "2022": -0.01995565169984157,
+        "2023": -0.009879097601942792,
+        "2024": 0.002455668442305137
+      },
+      "positive_windows": 28,
+      "active_utc_windows": 68,
+      "active_hkt_windows": 70,
+      "uncertainty": {
+        "repetitions": 2000,
+        "valid_replicates": 2000,
+        "block_trials": 2,
+        "seed": 20261002,
+        "return_interval": [
+          -0.019263078886906117,
+          0.00017206133256390804
+        ],
+        "advantage_interval": [
+          -0.009133965823073934,
+          0.010401502878522139
+        ]
+      },
+      "gates": {
+        "coverage": true,
+        "positive_return": false,
+        "price_control_advantage": false,
+        "bootstrap_coverage": true,
+        "two_positive_years": false,
+        "profitable_windows": false,
+        "active_windows": true,
+        "drawdown": false
+      }
+    },
+    "stress": {
+      "mean_return": -0.015014100259824205,
+      "median_return": -0.016631835331571088,
+      "control_mean_return": -0.01554772904573017,
+      "mean_turnover": 4.9340400581572785,
+      "worst_drawdown": 0.08785486237006446,
+      "year_means": {
+        "2022": -0.025946065032260594,
+        "2023": -0.01514200632573084,
+        "2024": -0.0030796722396862685
+      },
+      "positive_windows": 26,
+      "active_utc_windows": 67,
+      "active_hkt_windows": 69,
+      "uncertainty": {
+        "repetitions": 2000,
+        "valid_replicates": 2000,
+        "block_trials": 2,
+        "seed": 20261002,
+        "return_interval": [
+          -0.024478146737060454,
+          -0.005149138401357141
+        ],
+        "advantage_interval": [
+          -0.009678039580316777,
+          0.009727940662246876
+        ]
+      },
+      "gates": {
+        "coverage": true,
+        "positive_return": false,
+        "price_control_advantage": false,
+        "bootstrap_coverage": true,
+        "two_positive_years": false,
+        "profitable_windows": false,
+        "active_windows": true,
+        "drawdown": false
+      }
+    }
+  },
+  "screen_passed": false,
+  "strategy_approved": false,
+  "historical_first_seen_verified": false,
+  "reserved_validation_opened": false,
+  "qualification_verified": false
+}

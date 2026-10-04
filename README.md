@@ -1,39 +1,113 @@
-# Roostoo Hackathon Bot — Baseline
+# Roostoo Hackathon Bot — Research and Execution
 
-An intentionally conservative, long-only trend-following bot for the Roostoo Quant Trading Hackathon. It is designed to be understandable, auditable, and safe to evolve—not to promise profitable trading.
+A long-only spot research bot for the Roostoo Quant Trading Hackathon, with a shared BTC/ETH portfolio simulator and guarded execution engine.
 
-**Research status (October 1):** The default 12/48 five-minute strategy performed poorly in a June–August 2026 historical test after estimated costs. Keep `DRY_RUN=true`; do not enable live trading with this configuration. See [RESEARCH.md](RESEARCH.md).
+**October 4 release choice:** no strategy has demonstrated a reliable edge. For a contest entry, the existing BTC/ETH `buffered_trend` is selected as an **experimental** live configuration, not validated as profitable or guaranteed to qualify. Follow the guarded [competition deployment runbook](COMPETITION_DEPLOYMENT.md) before enabling orders. Its unseen September fortnight lost 4.08% after estimated costs. The suite has 201 passing offline tests. See [RESEARCH_V2.md](RESEARCH_V2.md) for results and [AUDIT.md](AUDIT.md) for verified rules and limitations. The older single-asset study is retained in [RESEARCH.md](RESEARCH.md).
+
+Latest: a [public-attention long/cash test](ATTENTION_RESEARCH.md), using delayed
+Wikipedia readership rather than price-only signals, lost an average 0.94% base /
+1.50% stress per two-week trial. Activity passed but profitability did not.
+Nine rejected configurations / 1,980 portfolio scenarios now; historical counts
+do not prove point-in-time availability. No live integration or deployment.
+
+A separately frozen [pullback follow-up](PULLBACK_RESEARCH.md) also failed: it lost money in February and traded on only 3–4 UTC dates per 14-day window. Passing offline tests is not evidence of profitable trading. The separately approved [execution check](EXECUTION_VALIDATION.md) exposed and fixed a request-signing bug; consult that report for actual backend validation status.
+
+The approved testing-account round trip subsequently completed, leaving no BTC or pending orders. This does not validate a strategy. See [READINESS.md](READINESS.md) for the remaining gates. The October 4 release procedure is documented separately; a Git push does not deploy to EC2.
+
+The subsequently authorized [five-asset offline study](BASKET_RESEARCH.md) also
+failed: March return -1.77% base / -2.84% higher slippage, with too few active
+dates in both 14-day windows. April remains unopened. Configured trading pairs
+are unchanged. [Cost attribution](COST_ATTRIBUTION.md) separates price losses
+from fees/slippage without pretending costs can simply be removed.
+
+An October 2 [execution fault-injection follow-up](EXECUTION_FAULTS.md) adds
+restart tests with real changes to simulated cash/holdings, rejects missing or
+regressing fill reports, and preserves ambiguous order outcomes. The suite now
+has 98 passing offline tests. This is not additional real order validation.
+
+The resumed search tested [slower volatility-scaled momentum](VOL_MOMENTUM_RESEARCH.md)
+on previously uninspected January–March 2025 data. It also failed: -5.12% base /
+-6.15% higher-slippage quarter return, with all six 14-day windows negative.
+Its activity proxy passed, but its forecasts did not add value over the
+volatility-only control. There are now 110 passing offline tests. This new
+candidate is research-only and cannot run in BotEngine; no deployment is approved.
+
+The next fixed [daily relative-strength screen](RELATIVE_STRENGTH_RESEARCH.md)
+also failed: -0.83% base / -1.35% stress for January–March 2025, only two of six
+14-day windows profitable, and drawdown above its limit. This used already-seen
+screening data; untouched validation remains sealed. Seven candidates have now
+been rejected. There are 124 passing offline tests, and no strategy is approved.
+
+A separate [funding-rebound information screen](FUNDING_SIGNAL_RESEARCH.md)
+also failed. Across 426 negative-funding observations, the average eight-hour
+spot return was -0.22% before costs / -0.52% base / -0.72% stress. These are
+isolated observation means, not portfolio returns. This signal was not added
+to the trading engine. The suite now has 140 passing offline tests.
+
+The subsequent [daily buyer-flow screen](TRADE_FLOW_RESEARCH.md) also failed:
+147 selected observations averaged -0.81% gross / -1.11% base / -1.31% stress
+over the following 24 hours. January's positive average did not persist in
+February or March. These are isolated returns, not a portfolio backtest.
+All 153 tests pass offline; results reproduce exactly. No live code or
+configuration changed, and reserved validation periods remain unopened.
+
+The [expanding-history forecast screen](FORECAST_RESEARCH.md) trained monthly
+from past data and evaluated 2022–2024. Its selected isolated returns averaged
++0.33% base / +0.13% stress, but uncertainty includes losses, scorable coverage
+was only 83.38%, and consistency/activity/forecast-quality gates failed. A
+positive average is not a validated strategy. The report discloses archive faults
+and a pre-result data-handling amendment. All 170 tests pass; no live integration.
+
+An [activity-measurement audit](ACTIVITY_AUDIT.md) distinguishes portfolio fill
+dates from information-screen entry dates and unnetted entry/exit calendars.
+No candidate is rescued. The forecast's unnetted calendar reaches eight dates
+in 23/72 windows versus 13/72 entry-only; neither proves qualification. Existing
+gates and results remain unchanged. All 175 tests pass offline.
+
+The new [monthly-horizon long/cash portfolio](LONG_TREND_RESEARCH.md) also failed.
+Across 77 usable fresh 14-day trials in 2022–2024, it averaged +0.23% base /
++0.15% stress, but uncertainty, profitability frequency, activity and drawdown
+gates failed. This is a real shared-cash simulation, not isolated trade averages.
+All 770 new runs reconcile; original 168 rows remain identical. Eight rejected
+configurations / 1,210 portfolio scenarios; 189 passing tests. No live integration.
 
 ## Strategy
 
-For each configured pair, the bot samples the Roostoo ticker every five minutes and builds a local price history. It holds cash until the fast moving average is above the slow moving average and volatility is below a safety threshold. It then targets a capped exposure per asset; otherwise it targets zero exposure. A rebalance band limits unnecessary trading.
+Every five minutes, the bot requests fully closed BTC/ETH candles from Binance's public, credential-free data API. This matches the historical signal input and supplies the required history immediately; no multi-day collection wait is needed. Roostoo's current bid/ask and account balances determine order size. The baseline holds cash until the fast moving average is above the slow moving average and volatility is below a safety threshold, then targets capped exposure. A rebalance band limits unnecessary trading.
 
-The current baseline is deliberately **long-only**. It does not do market making, arbitrage, high-frequency trading, manual intervention, or force a trade when there is no strategy signal.
+`SIGNAL_SOURCE=binance` is the default. Missing, stale, incomplete or malformed candles block strategy orders; there is no silent source substitution. Risk exits can still proceed with valid Roostoo quotes. The explicit legacy option `SIGNAL_SOURCE=roostoo` collects ticker samples locally and is not exactly the same input as the backtest.
+
+The default remains the rejected `baseline` for transparent comparison in observation mode. The October 4 runbook selects `buffered_trend` explicitly in EC2 `.env` as an experimental contest entry, with `FAST_WINDOW=144`, `SLOW_WINDOW=576`, and `DECISION_EVERY_BARS=12`. `cash` generates zero exposure targets. No strategy forces a trade to meet an activity quota. Shorting is outside this implementation.
+
+The rejected `pullback` research candidate uses the same 144/576 windows, 15-minute decisions (`DECISION_EVERY_BARS=3`), and the exact rules in [PULLBACK_PLAN.md](PULLBACK_PLAN.md). It is not enabled by default.
 
 ## Safety controls
 
 - `DRY_RUN=true` by default: records intended orders but never sends them.
 - Separate credentials through `.env`; the file is ignored by Git.
-- Per-asset exposure cap, minimum order size, rebalance band.
-- Daily-loss and peak-to-trough drawdown circuit breakers.
+- Shared cash budget, fee/slippage allowance, cash reserve, and dynamic exchange quantity precision/minimum notional.
+- Daily-loss and peak-to-trough drawdown guards request liquidation; exits bypass the rebalance band. The drawdown halt persists; the daily halt resets at HKT midnight. They cannot guarantee a maximum loss during gaps or outages.
+- Durable order intent before submission; ambiguous outcomes block further orders. Identified pending/partial orders are queried until terminal. Order submissions are never automatically retried.
+- Per-directory engine lock; at most one processed five-minute bucket; closed-candle validation (or gap-reset warm-up in legacy ticker mode).
 - Persistent state, JSONL decision logs, and detailed application logs.
 - Deterministic HMAC-SHA256 signing for Roostoo signed endpoints.
 
 ## Local setup
 
 ```bash
-cp .env.example .env
+# New installations only: do not overwrite an existing .env.
+test -e .env || cp .env.example .env
 # The user-provided .env convention is already supported:
 # ROOSTOO_API_KEY / ROOSTOO_API_SECRET for testing and
 # ROOSTOO_COMPET_API_KEY / ROOSTOO_COMPET_API_SECRET for the live competition.
 # Leave CREDENTIAL_SET=testing.
-PYTHONPATH=src python3 -m roostoo_bot.main --once
+PYTHONPATH=src python3 -m roostoo_bot.main --once --dry-run
 PYTHONPATH=src python3 -m unittest discover -s tests
 ```
 
-`--once` is the first test: it performs signed read calls, creates no orders while `DRY_RUN=true`, and writes `data/events.jsonl`.
+`--once --dry-run` performs signed read calls, forces observation without orders, and writes `data/events.jsonl`. Keep `CREDENTIAL_SET=testing`; use the preflight below for a command that enforces the testing credential set as well.
 
-Only after checking logs and testing, change `DRY_RUN=false` in the instance-local `.env`. Do not commit that file. Keep `CREDENTIAL_SET=testing` until the official Oct 4 start; then change it to `competition` on the instance only.
+Passing tests or reaching October 4 does not approve a strategy. Changing `DRY_RUN` alone cannot enable normal bot orders: a separate `LIVE_TRADING_ENABLED` gate defaults to false. The later isolated test-account probe received specific human approval; that permission does not authorize running a strategy or deploying anything.
 
 ## EC2 deployment
 
@@ -49,7 +123,7 @@ Do this only inside the EC2 instance, never in GitHub and never in a chat window
 
 ```bash
 cd ~/quant_hackathong_bot
-cp .env.example .env
+test -e .env || cp .env.example .env
 nano .env
 chmod 600 .env
 ```
@@ -74,11 +148,11 @@ Run a single safe test cycle, then inspect its non-secret logs:
 
 ```bash
 PYTHONPATH=src python3 -m unittest discover -s tests
-PYTHONPATH=src python3 -m roostoo_bot.main --once
+PYTHONPATH=src python3 -m roostoo_bot.main --once --dry-run
 tail -n 5 data/events.jsonl
 ```
 
-Do **not** change `CREDENTIAL_SET=competition` or `DRY_RUN=false` until the organizers open the live round on October 4 and this test has succeeded. `.env` is ignored by Git; never add it with `git add -f`.
+Do **not** enable orders from these older testing instructions. Use the current [competition deployment runbook](COMPETITION_DEPLOYMENT.md) for the experimental October 4 release. `.env` is ignored by Git; never add it with `git add -f`. A Git push alone never changes the existing EC2 process.
 
 ## Repository hygiene for judging
 
@@ -89,7 +163,37 @@ Do **not** change `CREDENTIAL_SET=competition` or `DRY_RUN=false` until the orga
 
 ## Important limitations / next work
 
-The initial historical test rejected the default strategy; see [RESEARCH.md](RESEARCH.md). Before any live orders, the bot also needs exchange-specific precision/minimum-order validation, a two-asset portfolio backtest, realistic execution checks, and a review of the required daily activity rule.
+The portfolio study rejects every candidate. See [execution validation](EXECUTION_VALIDATION.md) for what has and has not been checked against actual backend orders. The exact qualifying daily trade count and official metric sampling remain unspecified. Do not interpret the simulator's activity count as qualification.
+
+## Local verification and portfolio study
+
+All offline tests use fake exchange clients; they do not load `.env` or place orders:
+
+```bash
+PYTHONPATH=src python3 -m unittest discover -s tests -v
+```
+
+The read-only preflight **forces the testing credential set and disables orders**, regardless of environment defaults. It checks clock, rules, ticker, balances, pending orders, pair-specific authenticated order history, and closed-candle availability, and saves `data/preflight.json`:
+
+```bash
+PYTHONPATH=src python3 -m roostoo_bot.preflight
+```
+
+On this Mac's Python installation, TLS checks require the existing system CA bundle: prefix the command with `SSL_CERT_FILE=/etc/ssl/cert.pem`. Do not disable certificate verification. This workaround is not normally needed on EC2.
+
+Reproduce the frozen experiments from public, checksum-verified archives (no credentials required):
+
+```bash
+PYTHONPATH=src python3 -m roostoo_bot.download_data \
+  --output data/market --months 2026-05 2026-06 2026-07 2026-08 \
+  --start-date 2026-09-01 --end-date 2026-09-28
+PYTHONPATH=src python3 -m roostoo_bot.research \
+  --market data/market --output data/research_v2_corrected
+```
+
+The study writes per-period cash/equity and fill traces, `results.json`, and a SHA-256 input/configuration manifest. Full protocol: [EXPERIMENT_PLAN.md](EXPERIMENT_PLAN.md). `portfolio_backtest` also supports custom `--btc` and `--eth` archive lists and `--strategy`.
+
+V2 state lives in `data/state.v2.<credential_set>.<dry|live>.json`. Old untimestamped `state.json` is preserved but not reused, isolating test/dry/live risk baselines. The default public candle source obtains 49 closed candles for baseline or 577 for the slow candidates. Only legacy ticker mode needs to collect those observations over time. Do not copy dry-run account/risk state into a live account. Run one bot process per account and data directory; the request limiter is local to the process.
 
 ## Historical backtest
 
@@ -101,7 +205,7 @@ PYTHONPATH=src python3 -m roostoo_bot.backtest \
   --output data/backtest_btc
 ```
 
-The command writes `summary.json` (return, buy-and-hold comparison, drawdown, Sharpe, Sortino, Calmar, trade count, and active trading days) and `equity_curve.csv`. It mirrors the live bot's five-minute sampling, warm-up, and rebalance rule. This is a **single-asset** simulator, so its results are not the combined BTC/ETH portfolio. Binance USDT candles are a proxy for Roostoo's USD quotes. A single historical month is not enough to prove a strategy works.
+The command writes `summary.json` and `equity_curve.csv`. This retained **legacy single-asset** simulator does not include the new shared portfolio and risk controls; use `research` or `portfolio_backtest` for current evidence. Binance USDT candles are a proxy for Roostoo's USD quotes. A single historical month is not enough to prove a strategy works.
 
 ## Optional news research (separate from trading)
 

@@ -192,7 +192,8 @@ def observe_once(data_dir: Path, use_llm: bool = False) -> dict[str, int]:
             candidates.extend(fetch_feed(source, url))
         except (OSError, ValueError, ET.ParseError) as exc:
             failures += 1
-            print(f"news feed unavailable: {source} ({type(exc).__name__})")
+            status = f"HTTP {exc.code}" if isinstance(exc, urllib.error.HTTPError) else type(exc).__name__
+            print(f"news feed unavailable: {source} ({status})")
     fresh = []
     for item in sorted(candidates, key=lambda entry: entry["published_at"] or entry["first_seen_at"], reverse=True):
         if item["id"] in seen:

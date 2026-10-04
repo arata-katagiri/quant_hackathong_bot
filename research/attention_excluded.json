@@ -1,0 +1,10 @@
+[
+  {
+    "period": "trial_31",
+    "start_us": 1678492800000000,
+    "end_exclusive_us": 1679702400000000,
+    "reasons": [
+      "missing_execution_bar"
+    ]
+  }
+]

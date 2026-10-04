@@ -1,0 +1,127 @@
+{
+  "created_at": "2026-10-01T05:32:26.214682+00:00",
+  "stage": "march",
+  "plan_sha256": "961c92ccdf145f8dfa756ce05b2c1f331aea6bee8200fbf6c29a68aecd1c5898",
+  "inputs": [
+    {
+      "file": "BTCUSDT-5m-2026-02.zip",
+      "sha256": "329314be85423f40b4ddcc77bde1c78c71bd8a7ff5915f342bf972b949e71e34"
+    },
+    {
+      "file": "BTCUSDT-5m-2026-03.zip",
+      "sha256": "e4a615e1558cd80acff53593a4659d3addc933bdbed1149ed252b8588aaccb3c"
+    },
+    {
+      "file": "ETHUSDT-5m-2026-02.zip",
+      "sha256": "1f583084182d61558324da9e1fc9ee86ab3d76038391197ddc3d7a05bcdae96e"
+    },
+    {
+      "file": "ETHUSDT-5m-2026-03.zip",
+      "sha256": "e6576396f0d01b93142b60cd0a2eecc226c78af0ab8cdadaa322b0653354dd13"
+    },
+    {
+      "file": "XRPUSDT-5m-2026-02.zip",
+      "sha256": "b29837ca5a59a44e340b8740cab3e8e862325c6e1beef7d9343838c8a8af12d4"
+    },
+    {
+      "file": "XRPUSDT-5m-2026-03.zip",
+      "sha256": "54c1339489c8376c93eb2ac934b7237e313c03318554405876319608eed088e6"
+    },
+    {
+      "file": "BNBUSDT-5m-2026-02.zip",
+      "sha256": "0662df1b058a5d96d33d7ac926bc1e94a2985c9d46392ad696103ac65844324f"
+    },
+    {
+      "file": "BNBUSDT-5m-2026-03.zip",
+      "sha256": "86223ba2134b0b0031b48d673e153945bd4d88de816d5cc305606c3cbbf24bc7"
+    },
+    {
+      "file": "SOLUSDT-5m-2026-02.zip",
+      "sha256": "64b7592581b03c639db20a700d7c645116fc1c619c97dd03c3ad8688e25d2311"
+    },
+    {
+      "file": "SOLUSDT-5m-2026-03.zip",
+      "sha256": "0ee1dbc2a6796135aa909170449a22175efa966f1dc86032a05126b3c78a97b4"
+    }
+  ],
+  "source_sha256": {
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/__init__.py": "6dfee1f11a69875b6246e031ce826fc111fc08192539af8ee4b3ff9a2de916f4",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/attribution.py": "44f91f779072d4cceb1e3c67bcd747756f905477436ad77ab56c5a91f6a1c763",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/backtest.py": "d4bdab2a6ce402f89f2e049e8c8f7cd15cdaf53d2a3a090b6c309b47c5957569",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/basket_research.py": "c61b94b5933030f2d326c68a21c3c83cd3bd98adb420d864427252ed722b5e53",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/client.py": "80d170e85159d23c56553bec0a4b6c658cb88ee0f0c8206aec14d6c6357770ad",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/config.py": "aa856889cf0ca43e7c11414e8de7e328fa24f60085f9d6e6783f9539d8a86fc2",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/download_data.py": "d0cbb09aa6cb381423f9ceb6887a6327bafe48dc869be74aa30b6e695bf33f90",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/engine.py": "8482ed415b0a8993b4d469b309189aba45041c147536b5eec42421e03aa64d85",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/execution_probe.py": "8322e019ef93cc41360b9325c2a579eb410f9fe5efec4f68a7cc18c903c35790",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/logging_utils.py": "d17be967bfca0efc1e4417661cd5c8225247ae0eeb3dd7c54cd170f6fb005fb5",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/main.py": "0021c5f2754999e4469148a2044f78ac1e8a4a337702e960c69b83f5b58e7318",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/market_data.py": "7fcca5823a777a7808559beddc037acee8ba6e06f3bc9c8201f93e28073ab11e",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/news.py": "1eb10a3e4095b0aefc89b159c93f386b62380d8a67a845ea03257e0a3bb9ab5f",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/portfolio.py": "0208a789e03462f6a2f467d3a49daa2508f474121c0d432922a3d142440cd898",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/portfolio_backtest.py": "a5301a287c816e62458a4dbbd30bb248a94eaf0e158c1ee19904c5d4bf36ff18",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/preflight.py": "6fa89aa3a19cf0fecbe6f5cf8c50eb6005a26c40030036fde2c88cc37906c681",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/pullback_research.py": "983ad55fbe7325fcf0febbd79267e58d39e4bd312ff7273c818177b4738bc3e6",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/research.py": "c9675e99df1b2bab535fefc93ba973c6dfdbddd90464d87de9995478c010ebcc",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/state.py": "2691da176be604a3c7c2cfc5cb6f4eb34b4d85e0f7b0eb8a71325ce95f8288b0",
+    "/Users/umar/Documents/Codex/2026-10-01/https-apc01-safelinks-protection-outlook-com/roostoo_bot/src/roostoo_bot/strategy.py": "dd9fb8c65e72b118e20f051371983dbdc92332eea457e231e5898e3afa3a35e8"
+  },
+  "rules_snapshot_date": "2026-10-01",
+  "rules": {
+    "BTC/USD": {
+      "amount_precision": 5,
+      "min_notional": 1.0,
+      "can_trade": true
+    },
+    "ETH/USD": {
+      "amount_precision": 4,
+      "min_notional": 1.0,
+      "can_trade": true
+    },
+    "XRP/USD": {
+      "amount_precision": 1,
+      "min_notional": 1.0,
+      "can_trade": true
+    },
+    "BNB/USD": {
+      "amount_precision": 3,
+      "min_notional": 1.0,
+      "can_trade": true
+    },
+    "SOL/USD": {
+      "amount_precision": 3,
+      "min_notional": 1.0,
+      "can_trade": true
+    }
+  },
+  "settings": {
+    "dry_run": true,
+    "pairs": [
+      "BTC/USD",
+      "ETH/USD",
+      "XRP/USD",
+      "BNB/USD",
+      "SOL/USD"
+    ],
+    "poll_seconds": 300,
+    "fast_window": 144,
+    "slow_window": 576,
+    "max_asset_weight": 0.14,
+    "rebalance_band": 0.05,
+    "min_trade_usd": 250.0,
+    "max_daily_loss": 0.03,
+    "max_drawdown": 0.08,
+    "credential_set": "testing",
+    "strategy": "pullback",
+    "decision_every_bars": 3,
+    "signal_buffer": 0.005,
+    "fee_rate": 0.001,
+    "slippage_rate": 0.0005,
+    "cash_reserve": 0.01,
+    "max_spread": 0.005,
+    "max_quote_age_seconds": 30,
+    "max_sample_lag_seconds": 30,
+    "live_trading_enabled": false,
+    "signal_source": "offline"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "inputs": [
+    {
+      "file": "research/summary.json",
+      "sha256": "64732d33b06f2923f617d14f8b4a64682711469216faa3ddaea15df6611e2381"
+    },
+    {
+      "file": "research/pullback_summary.json",
+      "sha256": "99b24585d0c2c1de7416dac73dc8cbd21f9d1ac00196ff4e43eaf8bfe4209f5f"
+    },
+    {
+      "file": "research/basket_summary.json",
+      "sha256": "ea553ee1eddbd402e7758c83b1153e59efe48fdc1b4ee52279d87cc6a66636ad"
+    },
+    {
+      "file": "research/vol_summary.json",
+      "sha256": "03a3cc6326c6792e7ee12ce14988e14f4dfdbf23747c0d99efb07d007dde3229"
+    },
+    {
+      "file": "research/relative_summary.json",
+      "sha256": "b1e31d0ab61ee205eccbc3b4d779e616944236e1af0189a82f3f43ac04485f9f"
+    },
+    {
+      "file": "data/funding_screen/observations.jsonl",
+      "sha256": "ed324ebd53156edaada6fcf2c3c7c14d997492fc705990316ce3f0952b74b7ab"
+    },
+    {
+      "file": "data/funding_screen/results.json",
+      "sha256": "d99c8cd9f6eea83ea591bec74dfee158ce3c39d866aac1fe59f397b87e1d5dad"
+    },
+    {
+      "file": "research/funding_summary.json",
+      "sha256": "d99c8cd9f6eea83ea591bec74dfee158ce3c39d866aac1fe59f397b87e1d5dad"
+    },
+    {
+      "file": "data/trade_flow_screen/observations.jsonl",
+      "sha256": "c75756110e9723ff312f33ad9377cd8b744f730b667fbdcfea4747c7b523495a"
+    },
+    {
+      "file": "data/trade_flow_screen/results.json",
+      "sha256": "2c8c4fe7c0cb0753cd53b5bcb62d0024608267d441d76f88eadfd3c47509ad67"
+    },
+    {
+      "file": "research/trade_flow_summary.json",
+      "sha256": "2c8c4fe7c0cb0753cd53b5bcb62d0024608267d441d76f88eadfd3c47509ad67"
+    },
+    {
+      "file": "data/forecast_screen_verified/observations.jsonl",
+      "sha256": "acc42a90b9311716316f4d4020e916db4bd27437ea727f45574d9ecaaa5596f0"
+    },
+    {
+      "file": "data/forecast_screen_verified/results.json",
+      "sha256": "75bc7af11bcbcdb62eddec9518acc63e29674c96b6b1a6486c35b36cae836635"
+    },
+    {
+      "file": "research/forecast_summary.json",
+      "sha256": "75bc7af11bcbcdb62eddec9518acc63e29674c96b6b1a6486c35b36cae836635"
+    }
+  ],
+  "plan_sha256": "6c6a880f09f91c02e25498993aa0d39ec5aae9eee5f3cafa9ed189faf1338f4a",
+  "source_sha256": "8be3e8bcfea978202ab8b49c00bef4ddf55b235ac1caf68bc3c5be250b4198e5"
+}
